@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Descargar;
+use App\Http\Controllers\InstalarDaq;
+use App\Http\Controllers\InstalarSnort;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +16,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('inicio');
 });
+Route::get('/descargar', [Descargar::class, 'index']);
+Route::get('/instalardaq', [InstalarDaq::class, 'index']);
+Route::get('/instalarsnort', [InstalarSnort::class, 'index']);
+
+
