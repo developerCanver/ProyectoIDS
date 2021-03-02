@@ -5,7 +5,7 @@ if [ -f daq-2.0.7.tar.gz ]
 then
   echo 'Descarga Completa DAQ'
 else
-  echo 'No se ha descargado'
+  echo 'Descargando'
 fi
 
 #for dir in $@

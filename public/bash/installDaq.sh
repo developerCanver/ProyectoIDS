@@ -2,6 +2,7 @@
 #!/bin/bash
 
 cd daq-2.0.7/
+autoreconf -f -i
 ./configure
  #echo "${pwd##*/}"
 #echo "${"

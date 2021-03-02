@@ -78,17 +78,25 @@
             <div class="col-xl-3 col-sm-6">
                 <div class="card bg-primary">
                     <a href="{{ url('/reiniciar') }}" class="media-body ">
-                    <div class="card-body widget-style-2">
-                        <div class="text-white media">
-                            <div class="media-body align-self-center">
-                                <h2 class="my-0 text-white"><span data-plugin="counterup">145</span></h2>
-                                <p class="mb-0">Reiniciar instalacióm</p>
+                        <div class="card-body widget-style-2">
+                            <div class="text-white media">
+                                <div class="media-body align-self-center">
+                                    <h2 class="my-0 text-white"><span data-plugin="counterup">145</span></h2>
+                                    <p class="mb-0">Reiniciar instalacióm</p>
+                                </div>
+                                <i class="ion-md ion-ios-git-compare"></i>
                             </div>
-                            <i class="ion-md ion-ios-git-compare"></i>
                         </div>
-                    </div>
-                </a>
+                    </a>
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                {{$daq}}
+            </div>
+            <div class="col-12">
+                {{$snort}}
             </div>
         </div>
     </div>
