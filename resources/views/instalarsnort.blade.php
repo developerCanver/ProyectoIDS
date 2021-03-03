@@ -105,6 +105,7 @@ $msjConfig='';
 $msjMake='';
 $msjSudoMake='';
 $SnoortPCRE=0;
+$Snotrlibdumbnet=0;
 
 foreach ($snortConfig as $key => $value) {
     $value= trim($value);
@@ -112,17 +113,29 @@ foreach ($snortConfig as $key => $value) {
   if ($value=='checking for pcre.h... no') {
         echo('*************ERROR LIBPCRE********************');
         $SnoortPCRE=1;
-        // exec('sudo apt-get install libpcre3-dev -y')
-        /*bash/ErrorSnoortPCRE.sh: 5: autoreconf: not found
-        E: se interrumpió la ejecución de dpkg, debe ejecutar manualmente «sudo dpkg --configure -a» para corregir el problema****/
 
     }
+    if ($value=='checking for dumbnet.h... no') {
+        echo('*************ERROR LIBPCRE********************');
+        $Snotrlibdumbnet=1;
+
+    }
+    
 }
    if ($SnoortPCRE==1) {
         echo('*************Ejecutando solucion********************');
         exec('sh bash/ErrorSnoortPCRE.sh', $ErrorSnoortPCRE);
 
         foreach ($ErrorSnoortPCRE as $key => $value) {
+        echo ($key ." : ".$value."<br>");
+        }
+   }
+
+   if ($Snotrlibdumbnet==1) {
+        echo('*************Ejecutando solucion**** Snotrlibdumbnet****************');
+        exec('sh bash/ErrorSnotrlibdumbnet.sh', $ERRSnotrlibdumbnet);
+
+        foreach ($ERRSnotrlibdumbnet as $key => $value) {
         echo ($key ." : ".$value."<br>");
         }
    }

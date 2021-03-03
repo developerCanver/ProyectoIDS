@@ -1045,7 +1045,7 @@ configure:11375: $? = 0
 configure:11375: result: yes
 configure:11375: checking for strlcpy
 configure:11375: gcc -o conftest -g -O2   conftest.c -lnsl -lm -lm  >&5
-/usr/bin/ld: /tmp/ccmAJ5EB.o: in function `main':
+/usr/bin/ld: /tmp/ccb90GOQ.o: in function `main':
 /home/ubuntu/Documentos/ProyectoIDS/public/snort-2.9.17/conftest.c:72: undefined reference to `strlcpy'
 collect2: error: ld returned 1 exit status
 configure:11375: $? = 1
@@ -1128,7 +1128,7 @@ configure: failed program was:
 configure:11375: result: no
 configure:11375: checking for strlcat
 configure:11375: gcc -o conftest -g -O2   conftest.c -lnsl -lm -lm  >&5
-/usr/bin/ld: /tmp/ccZxXheX.o: in function `main':
+/usr/bin/ld: /tmp/ccRcxala.o: in function `main':
 /home/ubuntu/Documentos/ProyectoIDS/public/snort-2.9.17/conftest.c:72: undefined reference to `strlcat'
 collect2: error: ld returned 1 exit status
 configure:11375: $? = 1
@@ -2776,7 +2776,7 @@ conftest.c: In function 'main':
 conftest.c:77:4: warning: implicit declaration of function 'pcap_lex_destroy' [-Wimplicit-function-declaration]
    77 |    pcap_lex_destroy();
       |    ^~~~~~~~~~~~~~~~
-/usr/bin/ld: /tmp/ccPjURmd.o: in function `main':
+/usr/bin/ld: /tmp/cc2rqcPo.o: in function `main':
 /home/ubuntu/Documentos/ProyectoIDS/public/snort-2.9.17/conftest.c:77: undefined reference to `pcap_lex_destroy'
 collect2: error: ld returned 1 exit status
 configure:12283: $? = 1
@@ -2870,11 +2870,27 @@ configure:12314: $? = 0
 configure:12322: result: yes
 configure:12369: checking pcre.h usability
 configure:12369: gcc -c -g -O2   conftest.c >&5
-conftest.c:104:10: fatal error: pcre.h: No such file or directory
-  104 | #include <pcre.h>
-      |          ^~~~~~~~
-compilation terminated.
-configure:12369: $? = 1
+configure:12369: $? = 0
+configure:12369: result: yes
+configure:12369: checking pcre.h presence
+configure:12369: gcc -E   conftest.c
+configure:12369: $? = 0
+configure:12369: result: yes
+configure:12369: checking for pcre.h
+configure:12369: result: yes
+configure:12391: checking for pcre_compile in -lpcre
+configure:12416: gcc -o conftest -g -O2    -lpcre conftest.c -lpcre  -lpcap -lnsl -lm -lm  >&5
+configure:12416: $? = 0
+configure:12425: result: yes
+configure:12445: checking for libpcre version 6.0 or greater
+configure:12466: gcc -o conftest -g -O2    -lpcre conftest.c -lpcre -lpcap -lnsl -lm -lm  >&5
+configure:12466: $? = 0
+configure:12484: result: yes
+configure:12516: checking for SHA256_Init in -lcrypto
+configure:12541: gcc -o conftest -g -O2    -lpcre conftest.c -lcrypto  -lpcre -lpcap -lnsl -lm -lm  >&5
+/usr/bin/ld: cannot find -lcrypto
+collect2: error: ld returned 1 exit status
+configure:12541: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "snort"
@@ -2945,6 +2961,198 @@ configure: failed program was:
 | #define HAVE___FUNCTION__ 1
 | #define HAVE_LIBPCAP 1
 | #define HAVE_PCAP_LIB_VERSION 1
+| #define HAVE_PCRE_H 1
+| #define HAVE_LIBPCRE 1
+| /* end confdefs.h.  */
+| 
+| /* Override any GCC internal prototype to avoid an error.
+|    Use char because int might match the return type of a GCC
+|    builtin and then its argument prototype would still apply.  */
+| #ifdef __cplusplus
+| extern "C"
+| #endif
+| char SHA256_Init ();
+| int
+| main ()
+| {
+| return SHA256_Init ();
+|   ;
+|   return 0;
+| }
+configure:12550: result: no
+configure:12558: checking for MD5_Init in -lcrypto
+configure:12583: gcc -o conftest -g -O2    -lpcre conftest.c -lcrypto  -lpcre -lpcap -lnsl -lm -lm  >&5
+/usr/bin/ld: cannot find -lcrypto
+collect2: error: ld returned 1 exit status
+configure:12583: $? = 1
+configure: failed program was:
+| /* confdefs.h */
+| #define PACKAGE_NAME "snort"
+| #define PACKAGE_TARNAME "snort"
+| #define PACKAGE_VERSION "2.9.17"
+| #define PACKAGE_STRING "snort 2.9.17"
+| #define PACKAGE_BUGREPORT ""
+| #define PACKAGE_URL ""
+| #define PACKAGE "snort"
+| #define VERSION "2.9.17"
+| #define STDC_HEADERS 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_MEMORY_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_DLFCN_H 1
+| #define LT_OBJDIR ".libs/"
+| #define LINUX 1
+| #define HAVE__BOOL 1
+| #define HAVE_STDBOOL_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_MATH_H 1
+| #define HAVE_PATHS_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_WCHAR_H 1
+| #define HAVE_LIBM 1
+| #define HAVE_LIBM 1
+| #define HAVE_LIBNSL 1
+| #define HAVE_SIGACTION 1
+| #define HAVE_STRERROR 1
+| #define HAVE_VSWPRINTF 1
+| #define HAVE_WPRINTF 1
+| #define HAVE_MEMRCHR 1
+| #define HAVE_INET_NTOP 1
+| #define HAVE_GETTID 1
+| #define HAVE_SNPRINTF /**/
+| #define HAVE_MALLOC_TRIM 1
+| #define HAVE_MALLINFO 1
+| #define SIZEOF_CHAR 1
+| #define SIZEOF_SHORT 2
+| #define SIZEOF_INT 4
+| #define SIZEOF_LONG_INT 8
+| #define SIZEOF_LONG_LONG_INT 8
+| #define SIZEOF_UNSIGNED_INT 4
+| #define SIZEOF_UNSIGNED_LONG_INT 8
+| #define SIZEOF_UNSIGNED_LONG_LONG_INT 8
+| #define HAVE_U_INT8_T 1
+| #define HAVE_U_INT16_T 1
+| #define HAVE_U_INT32_T 1
+| #define HAVE_U_INT64_T 1
+| #define HAVE_UINT8_T 1
+| #define HAVE_UINT16_T 1
+| #define HAVE_UINT32_T 1
+| #define HAVE_UINT64_T 1
+| #define HAVE_INT8_T 1
+| #define HAVE_INT16_T 1
+| #define HAVE_INT32_T 1
+| #define HAVE_INT64_T 1
+| #define ERRLIST_PREDEFINED 1
+| #define HAVE___FUNCTION__ 1
+| #define HAVE_LIBPCAP 1
+| #define HAVE_PCAP_LIB_VERSION 1
+| #define HAVE_PCRE_H 1
+| #define HAVE_LIBPCRE 1
+| /* end confdefs.h.  */
+| 
+| /* Override any GCC internal prototype to avoid an error.
+|    Use char because int might match the return type of a GCC
+|    builtin and then its argument prototype would still apply.  */
+| #ifdef __cplusplus
+| extern "C"
+| #endif
+| char MD5_Init ();
+| int
+| main ()
+| {
+| return MD5_Init ();
+|   ;
+|   return 0;
+| }
+configure:12592: result: no
+configure:12763: checking dnet.h usability
+configure:12763: gcc -c -g -O2    conftest.c >&5
+conftest.c:106:10: fatal error: dnet.h: No such file or directory
+  106 | #include <dnet.h>
+      |          ^~~~~~~~
+compilation terminated.
+configure:12763: $? = 1
+configure: failed program was:
+| /* confdefs.h */
+| #define PACKAGE_NAME "snort"
+| #define PACKAGE_TARNAME "snort"
+| #define PACKAGE_VERSION "2.9.17"
+| #define PACKAGE_STRING "snort 2.9.17"
+| #define PACKAGE_BUGREPORT ""
+| #define PACKAGE_URL ""
+| #define PACKAGE "snort"
+| #define VERSION "2.9.17"
+| #define STDC_HEADERS 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_MEMORY_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_DLFCN_H 1
+| #define LT_OBJDIR ".libs/"
+| #define LINUX 1
+| #define HAVE__BOOL 1
+| #define HAVE_STDBOOL_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_MATH_H 1
+| #define HAVE_PATHS_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_WCHAR_H 1
+| #define HAVE_LIBM 1
+| #define HAVE_LIBM 1
+| #define HAVE_LIBNSL 1
+| #define HAVE_SIGACTION 1
+| #define HAVE_STRERROR 1
+| #define HAVE_VSWPRINTF 1
+| #define HAVE_WPRINTF 1
+| #define HAVE_MEMRCHR 1
+| #define HAVE_INET_NTOP 1
+| #define HAVE_GETTID 1
+| #define HAVE_SNPRINTF /**/
+| #define HAVE_MALLOC_TRIM 1
+| #define HAVE_MALLINFO 1
+| #define SIZEOF_CHAR 1
+| #define SIZEOF_SHORT 2
+| #define SIZEOF_INT 4
+| #define SIZEOF_LONG_INT 8
+| #define SIZEOF_LONG_LONG_INT 8
+| #define SIZEOF_UNSIGNED_INT 4
+| #define SIZEOF_UNSIGNED_LONG_INT 8
+| #define SIZEOF_UNSIGNED_LONG_LONG_INT 8
+| #define HAVE_U_INT8_T 1
+| #define HAVE_U_INT16_T 1
+| #define HAVE_U_INT32_T 1
+| #define HAVE_U_INT64_T 1
+| #define HAVE_UINT8_T 1
+| #define HAVE_UINT16_T 1
+| #define HAVE_UINT32_T 1
+| #define HAVE_UINT64_T 1
+| #define HAVE_INT8_T 1
+| #define HAVE_INT16_T 1
+| #define HAVE_INT32_T 1
+| #define HAVE_INT64_T 1
+| #define ERRLIST_PREDEFINED 1
+| #define HAVE___FUNCTION__ 1
+| #define HAVE_LIBPCAP 1
+| #define HAVE_PCAP_LIB_VERSION 1
+| #define HAVE_PCRE_H 1
+| #define HAVE_LIBPCRE 1
 | /* end confdefs.h.  */
 | #include <stdio.h>
 | #ifdef HAVE_SYS_TYPES_H
@@ -2979,15 +3187,15 @@ configure: failed program was:
 | #ifdef HAVE_UNISTD_H
 | # include <unistd.h>
 | #endif
-| #include <pcre.h>
-configure:12369: result: no
-configure:12369: checking pcre.h presence
-configure:12369: gcc -E   conftest.c
-conftest.c:71:10: fatal error: pcre.h: No such file or directory
-   71 | #include <pcre.h>
+| #include <dnet.h>
+configure:12763: result: no
+configure:12763: checking dnet.h presence
+configure:12763: gcc -E    conftest.c
+conftest.c:73:10: fatal error: dnet.h: No such file or directory
+   73 | #include <dnet.h>
       |          ^~~~~~~~
 compilation terminated.
-configure:12369: $? = 1
+configure:12763: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "snort"
@@ -3058,11 +3266,212 @@ configure: failed program was:
 | #define HAVE___FUNCTION__ 1
 | #define HAVE_LIBPCAP 1
 | #define HAVE_PCAP_LIB_VERSION 1
+| #define HAVE_PCRE_H 1
+| #define HAVE_LIBPCRE 1
 | /* end confdefs.h.  */
-| #include <pcre.h>
-configure:12369: result: no
-configure:12369: checking for pcre.h
-configure:12369: result: no
+| #include <dnet.h>
+configure:12763: result: no
+configure:12763: checking for dnet.h
+configure:12763: result: no
+configure:12777: checking dumbnet.h usability
+configure:12777: gcc -c -g -O2    conftest.c >&5
+conftest.c:106:10: fatal error: dumbnet.h: No such file or directory
+  106 | #include <dumbnet.h>
+      |          ^~~~~~~~~~~
+compilation terminated.
+configure:12777: $? = 1
+configure: failed program was:
+| /* confdefs.h */
+| #define PACKAGE_NAME "snort"
+| #define PACKAGE_TARNAME "snort"
+| #define PACKAGE_VERSION "2.9.17"
+| #define PACKAGE_STRING "snort 2.9.17"
+| #define PACKAGE_BUGREPORT ""
+| #define PACKAGE_URL ""
+| #define PACKAGE "snort"
+| #define VERSION "2.9.17"
+| #define STDC_HEADERS 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_MEMORY_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_DLFCN_H 1
+| #define LT_OBJDIR ".libs/"
+| #define LINUX 1
+| #define HAVE__BOOL 1
+| #define HAVE_STDBOOL_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_MATH_H 1
+| #define HAVE_PATHS_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_WCHAR_H 1
+| #define HAVE_LIBM 1
+| #define HAVE_LIBM 1
+| #define HAVE_LIBNSL 1
+| #define HAVE_SIGACTION 1
+| #define HAVE_STRERROR 1
+| #define HAVE_VSWPRINTF 1
+| #define HAVE_WPRINTF 1
+| #define HAVE_MEMRCHR 1
+| #define HAVE_INET_NTOP 1
+| #define HAVE_GETTID 1
+| #define HAVE_SNPRINTF /**/
+| #define HAVE_MALLOC_TRIM 1
+| #define HAVE_MALLINFO 1
+| #define SIZEOF_CHAR 1
+| #define SIZEOF_SHORT 2
+| #define SIZEOF_INT 4
+| #define SIZEOF_LONG_INT 8
+| #define SIZEOF_LONG_LONG_INT 8
+| #define SIZEOF_UNSIGNED_INT 4
+| #define SIZEOF_UNSIGNED_LONG_INT 8
+| #define SIZEOF_UNSIGNED_LONG_LONG_INT 8
+| #define HAVE_U_INT8_T 1
+| #define HAVE_U_INT16_T 1
+| #define HAVE_U_INT32_T 1
+| #define HAVE_U_INT64_T 1
+| #define HAVE_UINT8_T 1
+| #define HAVE_UINT16_T 1
+| #define HAVE_UINT32_T 1
+| #define HAVE_UINT64_T 1
+| #define HAVE_INT8_T 1
+| #define HAVE_INT16_T 1
+| #define HAVE_INT32_T 1
+| #define HAVE_INT64_T 1
+| #define ERRLIST_PREDEFINED 1
+| #define HAVE___FUNCTION__ 1
+| #define HAVE_LIBPCAP 1
+| #define HAVE_PCAP_LIB_VERSION 1
+| #define HAVE_PCRE_H 1
+| #define HAVE_LIBPCRE 1
+| /* end confdefs.h.  */
+| #include <stdio.h>
+| #ifdef HAVE_SYS_TYPES_H
+| # include <sys/types.h>
+| #endif
+| #ifdef HAVE_SYS_STAT_H
+| # include <sys/stat.h>
+| #endif
+| #ifdef STDC_HEADERS
+| # include <stdlib.h>
+| # include <stddef.h>
+| #else
+| # ifdef HAVE_STDLIB_H
+| #  include <stdlib.h>
+| # endif
+| #endif
+| #ifdef HAVE_STRING_H
+| # if !defined STDC_HEADERS && defined HAVE_MEMORY_H
+| #  include <memory.h>
+| # endif
+| # include <string.h>
+| #endif
+| #ifdef HAVE_STRINGS_H
+| # include <strings.h>
+| #endif
+| #ifdef HAVE_INTTYPES_H
+| # include <inttypes.h>
+| #endif
+| #ifdef HAVE_STDINT_H
+| # include <stdint.h>
+| #endif
+| #ifdef HAVE_UNISTD_H
+| # include <unistd.h>
+| #endif
+| #include <dumbnet.h>
+configure:12777: result: no
+configure:12777: checking dumbnet.h presence
+configure:12777: gcc -E    conftest.c
+conftest.c:73:10: fatal error: dumbnet.h: No such file or directory
+   73 | #include <dumbnet.h>
+      |          ^~~~~~~~~~~
+compilation terminated.
+configure:12777: $? = 1
+configure: failed program was:
+| /* confdefs.h */
+| #define PACKAGE_NAME "snort"
+| #define PACKAGE_TARNAME "snort"
+| #define PACKAGE_VERSION "2.9.17"
+| #define PACKAGE_STRING "snort 2.9.17"
+| #define PACKAGE_BUGREPORT ""
+| #define PACKAGE_URL ""
+| #define PACKAGE "snort"
+| #define VERSION "2.9.17"
+| #define STDC_HEADERS 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_MEMORY_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_DLFCN_H 1
+| #define LT_OBJDIR ".libs/"
+| #define LINUX 1
+| #define HAVE__BOOL 1
+| #define HAVE_STDBOOL_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_MATH_H 1
+| #define HAVE_PATHS_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_UNISTD_H 1
+| #define HAVE_WCHAR_H 1
+| #define HAVE_LIBM 1
+| #define HAVE_LIBM 1
+| #define HAVE_LIBNSL 1
+| #define HAVE_SIGACTION 1
+| #define HAVE_STRERROR 1
+| #define HAVE_VSWPRINTF 1
+| #define HAVE_WPRINTF 1
+| #define HAVE_MEMRCHR 1
+| #define HAVE_INET_NTOP 1
+| #define HAVE_GETTID 1
+| #define HAVE_SNPRINTF /**/
+| #define HAVE_MALLOC_TRIM 1
+| #define HAVE_MALLINFO 1
+| #define SIZEOF_CHAR 1
+| #define SIZEOF_SHORT 2
+| #define SIZEOF_INT 4
+| #define SIZEOF_LONG_INT 8
+| #define SIZEOF_LONG_LONG_INT 8
+| #define SIZEOF_UNSIGNED_INT 4
+| #define SIZEOF_UNSIGNED_LONG_INT 8
+| #define SIZEOF_UNSIGNED_LONG_LONG_INT 8
+| #define HAVE_U_INT8_T 1
+| #define HAVE_U_INT16_T 1
+| #define HAVE_U_INT32_T 1
+| #define HAVE_U_INT64_T 1
+| #define HAVE_UINT8_T 1
+| #define HAVE_UINT16_T 1
+| #define HAVE_UINT32_T 1
+| #define HAVE_UINT64_T 1
+| #define HAVE_INT8_T 1
+| #define HAVE_INT16_T 1
+| #define HAVE_INT32_T 1
+| #define HAVE_INT64_T 1
+| #define ERRLIST_PREDEFINED 1
+| #define HAVE___FUNCTION__ 1
+| #define HAVE_LIBPCAP 1
+| #define HAVE_PCAP_LIB_VERSION 1
+| #define HAVE_PCRE_H 1
+| #define HAVE_LIBPCRE 1
+| /* end confdefs.h.  */
+| #include <dumbnet.h>
+configure:12777: result: no
+configure:12777: checking for dumbnet.h
+configure:12777: result: no
 
 ## ---------------- ##
 ## Cache variables. ##
@@ -3123,11 +3532,13 @@ ac_cv_func_strlcpy=no
 ac_cv_func_vswprintf=yes
 ac_cv_func_wprintf=yes
 ac_cv_header_dlfcn_h=yes
+ac_cv_header_dnet_h=no
+ac_cv_header_dumbnet_h=no
 ac_cv_header_inttypes_h=yes
 ac_cv_header_math_h=yes
 ac_cv_header_memory_h=yes
 ac_cv_header_paths_h=yes
-ac_cv_header_pcre_h=no
+ac_cv_header_pcre_h=yes
 ac_cv_header_stdbool_h=yes
 ac_cv_header_stdc=yes
 ac_cv_header_stdint_h=yes
@@ -3141,10 +3552,13 @@ ac_cv_header_unistd_h=yes
 ac_cv_header_uuid_uuid_h=no
 ac_cv_header_wchar_h=yes
 ac_cv_host=x86_64-pc-linux-gnu
+ac_cv_lib_crypto_MD5_Init=no
+ac_cv_lib_crypto_SHA256_Init=no
 ac_cv_lib_m_ceil=yes
 ac_cv_lib_m_floor=yes
 ac_cv_lib_nsl_inet_ntoa=yes
 ac_cv_lib_pcap_pcap_datalink=yes
+ac_cv_lib_pcre_pcre_compile=yes
 ac_cv_lib_socket_socket=no
 ac_cv_objext=o
 ac_cv_path_EGREP='/usr/bin/grep -E'
@@ -3269,14 +3683,14 @@ AWK='gawk'
 BUILD_BUFFER_DUMP_FALSE=''
 BUILD_BUFFER_DUMP_TRUE=''
 BUILD_CONTROL_SOCKET_FALSE=''
-BUILD_CONTROL_SOCKET_TRUE=''
+BUILD_CONTROL_SOCKET_TRUE='#'
 BUILD_DYNAMIC_EXAMPLES_FALSE=''
 BUILD_DYNAMIC_EXAMPLES_TRUE=''
 BUILD_HA_FALSE=''
 BUILD_HA_TRUE=''
-BUILD_OPENSSL_MD5_FALSE=''
+BUILD_OPENSSL_MD5_FALSE='#'
 BUILD_OPENSSL_MD5_TRUE=''
-BUILD_OPENSSL_SHA_FALSE=''
+BUILD_OPENSSL_SHA_FALSE='#'
 BUILD_OPENSSL_SHA_TRUE=''
 BUILD_PROCPIDSTATS_FALSE=''
 BUILD_PROCPIDSTATS_TRUE=''
@@ -3285,7 +3699,7 @@ BUILD_REACT_TRUE=''
 BUILD_RESPOND3_FALSE=''
 BUILD_RESPOND3_TRUE=''
 BUILD_SIDE_CHANNEL_FALSE=''
-BUILD_SIDE_CHANNEL_TRUE=''
+BUILD_SIDE_CHANNEL_TRUE='#'
 BUILD_SNORT_RELOAD_FALSE=''
 BUILD_SNORT_RELOAD_TRUE=''
 BUILD_SNPRINTF_FALSE=''
@@ -3296,7 +3710,7 @@ CCONFIGFLAGS=''
 CFLAGS='-g -O2'
 CONFIGFLAGS=' -DSF_WCHAR'
 CPP='gcc -E'
-CPPFLAGS=' '
+CPPFLAGS='  '
 CYGPATH_W='echo'
 DEFS=''
 DEPDIR='.deps'
@@ -3329,10 +3743,10 @@ INSTALL_PROGRAM='${INSTALL}'
 INSTALL_SCRIPT='${INSTALL}'
 INSTALL_STRIP_PROGRAM='$(install_sh) -c -s'
 LD='/usr/bin/ld -m elf_x86_64'
-LDFLAGS=' '
+LDFLAGS=' -lpcre '
 LEX='flex'
 LIBOBJS=''
-LIBS='-lpcap -lnsl -lm -lm '
+LIBS='-lpcre -lpcap -lnsl -lm -lm '
 LIBTOOL='$(SHELL) $(top_builddir)/libtool'
 LIPO=''
 LN_S='ln -s'
@@ -3368,7 +3782,7 @@ SIGNAL_SNORT_DUMP_STATS=''
 SIGNAL_SNORT_READ_ATTR_TBL=''
 SIGNAL_SNORT_RELOAD=''
 SIGNAL_SNORT_ROTATE_STATS=''
-SO_WITH_STATIC_LIB_FALSE=''
+SO_WITH_STATIC_LIB_FALSE='#'
 SO_WITH_STATIC_LIB_TRUE=''
 STRIP='strip'
 VERSION='2.9.17'
@@ -3500,5 +3914,7 @@ target_alias=''
 #define HAVE___FUNCTION__ 1
 #define HAVE_LIBPCAP 1
 #define HAVE_PCAP_LIB_VERSION 1
+#define HAVE_PCRE_H 1
+#define HAVE_LIBPCRE 1
 
-configure: exit 1
+configure: exit 0
