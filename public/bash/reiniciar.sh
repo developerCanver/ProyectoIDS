@@ -1,7 +1,7 @@
 #Carlos 1Ruiz
 #!/bin/bash
 
-sudo fuser -vki /var/lib/dpkg/lock-frontend -y
+sudo fuser -vki /var/lib/dpkg/lock-frontend 
 sudo rm -f /var/lib/dpkg/lock-frontend
 sudo dpkg --configure -a
 sudo apt autoremove

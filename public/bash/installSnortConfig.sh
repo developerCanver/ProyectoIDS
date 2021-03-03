@@ -3,7 +3,8 @@
 
 cd snort-2.9.17/
 autoreconf -f -i
-./configure
+./configure --enable-sourcefire && make && sudo make install
+ldconfig
  #echo "${pwd##*/}"
 #echo "${"
 #printf '%s'

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Descargar;
 use App\Http\Controllers\InstalarDaq;
 use App\Http\Controllers\InstalarSnort;
+use App\Http\Controllers\Actualizar;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,5 +22,6 @@ Route::get('/', function () {
 Route::get('/descargar', [Descargar::class, 'index']);
 Route::get('/instalardaq', [InstalarDaq::class, 'index']);
 Route::get('/instalarsnort', [InstalarSnort::class, 'index']);
+Route::get('/actualizar', [Actualizar::class, 'index']);
 
 

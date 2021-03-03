@@ -6,9 +6,7 @@ use Illuminate\Http\Request;
 
 class InstalarDaq extends Controller
 {
-    public function index() {
-
-       
+    public function index() {      
        
     return view('instalardaq');
     }

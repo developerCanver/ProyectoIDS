@@ -125,14 +125,17 @@ configure:3843: $? = 0
 configure:3840: gcc -c conftest.c -o conftest2.o
 configure:3843: $? = 0
 configure:3855: result: yes
-configure:3883: checking for style of include used by make
-configure:3911: result: GNU
+configure:3875: checking whether make supports the include directive
+configure:3890: make -f confmf.GNU && cat confinc.out
+this is the am__doit target
+configure:3893: $? = 0
+configure:3912: result: yes (GNU style)
 configure:3937: checking dependency style of gcc
 configure:4048: result: gcc3
 configure:4092: checking build system type
-configure:4106: result: x86_64-unknown-linux-gnu
+configure:4106: result: x86_64-pc-linux-gnu
 configure:4126: checking host system type
-configure:4139: result: x86_64-unknown-linux-gnu
+configure:4139: result: x86_64-pc-linux-gnu
 configure:4180: checking how to print strings
 configure:4207: result: printf
 configure:4228: checking for a sed that does not truncate output
@@ -159,9 +162,9 @@ configure:4839: checking whether ln -s works
 configure:4843: result: yes
 configure:4851: checking the maximum length of command line arguments
 configure:4982: result: 1572864
-configure:5030: checking how to convert x86_64-unknown-linux-gnu file names to x86_64-unknown-linux-gnu format
+configure:5030: checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format
 configure:5070: result: func_convert_file_noop
-configure:5077: checking how to convert x86_64-unknown-linux-gnu file names to toolchain format
+configure:5077: checking how to convert x86_64-pc-linux-gnu file names to toolchain format
 configure:5097: result: func_convert_file_noop
 configure:5104: checking for /usr/bin/ld option to reload object files
 configure:5111: result: -r
@@ -180,11 +183,9 @@ configure:5704: result: ar
 configure:5741: checking for archiver @FILE support
 configure:5758: gcc -c -g -O2  conftest.c >&5
 configure:5758: $? = 0
-configure:5761: ar cru libconftest.a @conftest.lst >&5
-ar: `u' modifier ignored since `D' is the default (see `U')
+configure:5761: ar cr libconftest.a @conftest.lst >&5
 configure:5764: $? = 0
-configure:5769: ar cru libconftest.a @conftest.lst >&5
-ar: `u' modifier ignored since `D' is the default (see `U')
+configure:5769: ar cr libconftest.a @conftest.lst >&5
 ar: conftest.o: No such file or directory
 configure:5772: $? = 1
 configure:5771: result: @
@@ -197,34 +198,33 @@ configure:5955: result: ranlib
 configure:6057: checking command to parse /usr/bin/nm -B output from gcc object
 configure:6210: gcc -c -g -O2  conftest.c >&5
 configure:6213: $? = 0
-configure:6217: /usr/bin/nm -B conftest.o \| sed -n -e 's/^.*[ ]\([ABCDGIRSTW][ABCDGIRSTW]*\)[ ][ ]*\([_A-Za-z][_A-Za-z0-9]*\)$/\1 \2 \2/p' | sed '/ __gnu_lto/d' \> conftest.nm
-configure:6220: $? = 0
-configure:6286: gcc -o conftest -g -O2   conftest.c conftstm.o >&5
-configure:6289: $? = 0
-configure:6327: result: ok
-configure:6374: checking for sysroot
-configure:6404: result: no
-configure:6411: checking for a working dd
-configure:6449: result: /usr/bin/dd
-configure:6453: checking how to truncate binary pipes
-configure:6468: result: /usr/bin/dd bs=4096 count=1
-configure:6604: gcc -c -g -O2  conftest.c >&5
-configure:6607: $? = 0
-configure:6797: checking for mt
-configure:6813: found /usr/bin/mt
-configure:6824: result: mt
-configure:6847: checking if mt is a manifest tool
-configure:6853: mt '-?'
-configure:6861: result: no
-configure:7538: checking how to run the C preprocessor
-configure:7569: gcc -E  conftest.c
-configure:7569: $? = 0
-configure:7583: gcc -E  conftest.c
+configure:6217: /usr/bin/nm -B conftest.o | sed -n -e 's/^.*[	 ]\([ABCDGIRSTW][ABCDGIRSTW]*\)[	 ][	 ]*\([_A-Za-z][_A-Za-z0-9]*\)$/\1 \2 \2/p' | sed '/ __gnu_lto/d' > conftest.nm
+configure:6283: gcc -o conftest -g -O2   conftest.c conftstm.o >&5
+configure:6286: $? = 0
+configure:6324: result: ok
+configure:6371: checking for sysroot
+configure:6401: result: no
+configure:6408: checking for a working dd
+configure:6446: result: /usr/bin/dd
+configure:6450: checking how to truncate binary pipes
+configure:6465: result: /usr/bin/dd bs=4096 count=1
+configure:6601: gcc -c -g -O2  conftest.c >&5
+configure:6604: $? = 0
+configure:6794: checking for mt
+configure:6810: found /usr/bin/mt
+configure:6821: result: mt
+configure:6844: checking if mt is a manifest tool
+configure:6850: mt '-?'
+configure:6858: result: no
+configure:7535: checking how to run the C preprocessor
+configure:7566: gcc -E  conftest.c
+configure:7566: $? = 0
+configure:7580: gcc -E  conftest.c
 conftest.c:11:10: fatal error: ac_nonexistent.h: No such file or directory
    11 | #include <ac_nonexistent.h>
       |          ^~~~~~~~~~~~~~~~~~
 compilation terminated.
-configure:7583: $? = 1
+configure:7580: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "daq"
@@ -237,15 +237,15 @@ configure: failed program was:
 | #define VERSION "2.0.7"
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
-configure:7608: result: gcc -E
-configure:7628: gcc -E  conftest.c
-configure:7628: $? = 0
-configure:7642: gcc -E  conftest.c
+configure:7605: result: gcc -E
+configure:7625: gcc -E  conftest.c
+configure:7625: $? = 0
+configure:7639: gcc -E  conftest.c
 conftest.c:11:10: fatal error: ac_nonexistent.h: No such file or directory
    11 | #include <ac_nonexistent.h>
       |          ^~~~~~~~~~~~~~~~~~
 compilation terminated.
-configure:7642: $? = 1
+configure:7639: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "daq"
@@ -258,238 +258,238 @@ configure: failed program was:
 | #define VERSION "2.0.7"
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
-configure:7671: checking for ANSI C header files
-configure:7691: gcc -c -g -O2  conftest.c >&5
-configure:7691: $? = 0
-configure:7764: gcc -o conftest -g -O2   conftest.c  >&5
-configure:7764: $? = 0
-configure:7764: ./conftest
-configure:7764: $? = 0
-configure:7775: result: yes
-configure:7788: checking for sys/types.h
-configure:7788: gcc -c -g -O2  conftest.c >&5
-configure:7788: $? = 0
-configure:7788: result: yes
-configure:7788: checking for sys/stat.h
-configure:7788: gcc -c -g -O2  conftest.c >&5
-configure:7788: $? = 0
-configure:7788: result: yes
-configure:7788: checking for stdlib.h
-configure:7788: gcc -c -g -O2  conftest.c >&5
-configure:7788: $? = 0
-configure:7788: result: yes
-configure:7788: checking for string.h
-configure:7788: gcc -c -g -O2  conftest.c >&5
-configure:7788: $? = 0
-configure:7788: result: yes
-configure:7788: checking for memory.h
-configure:7788: gcc -c -g -O2  conftest.c >&5
-configure:7788: $? = 0
-configure:7788: result: yes
-configure:7788: checking for strings.h
-configure:7788: gcc -c -g -O2  conftest.c >&5
-configure:7788: $? = 0
-configure:7788: result: yes
-configure:7788: checking for inttypes.h
-configure:7788: gcc -c -g -O2  conftest.c >&5
-configure:7788: $? = 0
-configure:7788: result: yes
-configure:7788: checking for stdint.h
-configure:7788: gcc -c -g -O2  conftest.c >&5
-configure:7788: $? = 0
-configure:7788: result: yes
-configure:7788: checking for unistd.h
-configure:7788: gcc -c -g -O2  conftest.c >&5
-configure:7788: $? = 0
-configure:7788: result: yes
-configure:7802: checking for dlfcn.h
-configure:7802: gcc -c -g -O2  conftest.c >&5
-configure:7802: $? = 0
-configure:7802: result: yes
-configure:8058: checking for objdir
-configure:8073: result: .libs
-configure:8337: checking if gcc supports -fno-rtti -fno-exceptions
-configure:8355: gcc -c -g -O2  -fno-rtti -fno-exceptions conftest.c >&5
+configure:7668: checking for ANSI C header files
+configure:7688: gcc -c -g -O2  conftest.c >&5
+configure:7688: $? = 0
+configure:7761: gcc -o conftest -g -O2   conftest.c  >&5
+configure:7761: $? = 0
+configure:7761: ./conftest
+configure:7761: $? = 0
+configure:7772: result: yes
+configure:7785: checking for sys/types.h
+configure:7785: gcc -c -g -O2  conftest.c >&5
+configure:7785: $? = 0
+configure:7785: result: yes
+configure:7785: checking for sys/stat.h
+configure:7785: gcc -c -g -O2  conftest.c >&5
+configure:7785: $? = 0
+configure:7785: result: yes
+configure:7785: checking for stdlib.h
+configure:7785: gcc -c -g -O2  conftest.c >&5
+configure:7785: $? = 0
+configure:7785: result: yes
+configure:7785: checking for string.h
+configure:7785: gcc -c -g -O2  conftest.c >&5
+configure:7785: $? = 0
+configure:7785: result: yes
+configure:7785: checking for memory.h
+configure:7785: gcc -c -g -O2  conftest.c >&5
+configure:7785: $? = 0
+configure:7785: result: yes
+configure:7785: checking for strings.h
+configure:7785: gcc -c -g -O2  conftest.c >&5
+configure:7785: $? = 0
+configure:7785: result: yes
+configure:7785: checking for inttypes.h
+configure:7785: gcc -c -g -O2  conftest.c >&5
+configure:7785: $? = 0
+configure:7785: result: yes
+configure:7785: checking for stdint.h
+configure:7785: gcc -c -g -O2  conftest.c >&5
+configure:7785: $? = 0
+configure:7785: result: yes
+configure:7785: checking for unistd.h
+configure:7785: gcc -c -g -O2  conftest.c >&5
+configure:7785: $? = 0
+configure:7785: result: yes
+configure:7799: checking for dlfcn.h
+configure:7799: gcc -c -g -O2  conftest.c >&5
+configure:7799: $? = 0
+configure:7799: result: yes
+configure:8055: checking for objdir
+configure:8070: result: .libs
+configure:8334: checking if gcc supports -fno-rtti -fno-exceptions
+configure:8352: gcc -c -g -O2  -fno-rtti -fno-exceptions conftest.c >&5
 cc1: warning: command line option '-fno-rtti' is valid for C++/D/ObjC++ but not for C
-configure:8359: $? = 0
-configure:8372: result: no
-configure:8730: checking for gcc option to produce PIC
-configure:8737: result: -fPIC -DPIC
-configure:8745: checking if gcc PIC flag -fPIC -DPIC works
-configure:8763: gcc -c -g -O2  -fPIC -DPIC -DPIC conftest.c >&5
-configure:8767: $? = 0
-configure:8780: result: yes
-configure:8809: checking if gcc static flag -static works
-configure:8837: result: yes
-configure:8852: checking if gcc supports -c -o file.o
-configure:8873: gcc -c -g -O2  -o out/conftest2.o conftest.c >&5
-configure:8877: $? = 0
-configure:8899: result: yes
-configure:8907: checking if gcc supports -c -o file.o
-configure:8954: result: yes
-configure:8987: checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries
-configure:10246: result: yes
-configure:10283: checking whether -lc should be explicitly linked in
-configure:10291: gcc -c -g -O2  conftest.c >&5
-configure:10294: $? = 0
-configure:10309: gcc -shared  -fPIC -DPIC conftest.o  -v -Wl,-soname -Wl,conftest -o conftest 2\>\&1 \| /usr/bin/grep  -lc  \>/dev/null 2\>\&1
-configure:10312: $? = 0
-configure:10326: result: no
-configure:10486: checking dynamic linker characteristics
-configure:11067: gcc -o conftest -g -O2   -Wl,-rpath -Wl,/foo conftest.c  >&5
-configure:11067: $? = 0
-configure:11304: result: GNU/Linux ld.so
-configure:11426: checking how to hardcode library paths into programs
-configure:11451: result: immediate
-configure:11999: checking whether stripping libraries is possible
-configure:12004: result: yes
-configure:12039: checking if libtool supports shared libraries
-configure:12041: result: yes
-configure:12044: checking whether to build shared libraries
-configure:12069: result: yes
-configure:12072: checking whether to build static libraries
-configure:12076: result: yes
-configure:8909: checking for visibility support
-configure:8934: gcc -c -g -O2 -Werror -fvisibility=hidden  conftest.c >&5
-configure:8934: $? = 0
-configure:8943: result: yes
-configure:8974: checking CFLAGS for gcc -Wall
-configure:9001: gcc -c -g -O2 -fvisibility=hidden -pedantic -Werror  -Wall  conftest.c >&5
-configure:9001: $? = 0
-configure:9015: result: -Wall
-configure:9028: : CFLAGS="$CFLAGS $var"
-configure:9031: $? = 0
-configure:9038: checking CFLAGS for gcc -Wwrite-strings
-configure:9065: gcc -c -g -O2 -fvisibility=hidden -Wall -pedantic -Werror  -Wwrite-strings  conftest.c >&5
-configure:9065: $? = 0
-configure:9079: result: -Wwrite-strings
-configure:9092: : CFLAGS="$CFLAGS $var"
-configure:9095: $? = 0
-configure:9102: checking CFLAGS for gcc -Wsign-compare
-configure:9129: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -pedantic -Werror  -Wsign-compare  conftest.c >&5
-configure:9129: $? = 0
-configure:9143: result: -Wsign-compare
-configure:9156: : CFLAGS="$CFLAGS $var"
-configure:9159: $? = 0
-configure:9166: checking CFLAGS for gcc -Wcast-align
-configure:9193: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -pedantic -Werror  -Wcast-align  conftest.c >&5
-configure:9193: $? = 0
-configure:9207: result: -Wcast-align
-configure:9220: : CFLAGS="$CFLAGS $var"
-configure:9223: $? = 0
-configure:9230: checking CFLAGS for gcc -Wextra
-configure:9257: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -pedantic -Werror  -Wextra  conftest.c >&5
-configure:9257: $? = 0
-configure:9271: result: -Wextra
-configure:9284: : CFLAGS="$CFLAGS $var"
-configure:9287: $? = 0
-configure:9294: checking CFLAGS for gcc -Wformat
-configure:9321: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -pedantic -Werror  -Wformat  conftest.c >&5
-configure:9321: $? = 0
-configure:9335: result: -Wformat
-configure:9348: : CFLAGS="$CFLAGS $var"
-configure:9351: $? = 0
-configure:9358: checking CFLAGS for gcc -Wformat-security
-configure:9385: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -pedantic -Werror  -Wformat-security  conftest.c >&5
-configure:9385: $? = 0
-configure:9399: result: -Wformat-security
-configure:9412: : CFLAGS="$CFLAGS $var"
-configure:9415: $? = 0
-configure:9422: checking CFLAGS for gcc -Wno-unused-parameter
-configure:9449: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -pedantic -Werror  -Wno-unused-parameter  conftest.c >&5
-configure:9449: $? = 0
-configure:9463: result: -Wno-unused-parameter
-configure:9476: : CFLAGS="$CFLAGS $var"
-configure:9479: $? = 0
-configure:9486: checking CFLAGS for gcc -fno-strict-aliasing
-configure:9513: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -pedantic -Werror  -fno-strict-aliasing  conftest.c >&5
-configure:9513: $? = 0
-configure:9527: result: -fno-strict-aliasing
-configure:9540: : CFLAGS="$CFLAGS $var"
-configure:9543: $? = 0
-configure:9550: checking CFLAGS for gcc -fdiagnostics-show-option
-configure:9577: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -pedantic -Werror  -fdiagnostics-show-option  conftest.c >&5
-configure:9577: $? = 0
-configure:9591: result: -fdiagnostics-show-option
-configure:9604: : CFLAGS="$CFLAGS $var"
-configure:9607: $? = 0
-configure:9614: checking CFLAGS for gcc -pedantic -std=c99 -D_GNU_SOURCE
-configure:9641: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -Werror  -pedantic -std=c99 -D_GNU_SOURCE  conftest.c >&5
-configure:9641: $? = 0
-configure:9655: result: -pedantic -std=c99 -D_GNU_SOURCE
-configure:9668: : CFLAGS="$CFLAGS $var"
-configure:9671: $? = 0
-configure:9690: checking for getaddrinfo
-configure:9690: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE   conftest.c  >&5
-configure:9690: $? = 0
-configure:9690: result: yes
-configure:9730: checking for flex
-configure:9746: found /usr/bin/flex
-configure:9757: result: flex
-configure:9772: checking for flex 2.4 or higher
-configure:9784: result: yes
-configure:9800: checking for bison
-configure:9816: found /usr/bin/bison
-configure:9827: result: bison
-configure:9979: checking linux/if_ether.h usability
-configure:9979: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE   conftest.c >&5
-configure:9979: $? = 0
-configure:9979: result: yes
-configure:9979: checking linux/if_ether.h presence
-configure:9979: gcc -E   conftest.c
-configure:9979: $? = 0
-configure:9979: result: yes
-configure:9979: checking for linux/if_ether.h
-configure:9979: result: yes
-configure:9979: checking linux/if_packet.h usability
-configure:9979: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE   conftest.c >&5
-configure:9979: $? = 0
-configure:9979: result: yes
-configure:9979: checking linux/if_packet.h presence
-configure:9979: gcc -E   conftest.c
-configure:9979: $? = 0
-configure:9979: result: yes
-configure:9979: checking for linux/if_packet.h
-configure:9979: result: yes
-configure:9991: checking whether TPACKET2_HDRLEN is declared
-configure:9991: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE   conftest.c >&5
-configure:9991: $? = 0
-configure:9991: result: yes
-configure:10007: checking whether PACKET_TX_RING is declared
-configure:10007: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE   conftest.c >&5
-configure:10007: $? = 0
-configure:10007: result: yes
-configure:10046: checking pcap.h usability
-configure:10046: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE   conftest.c >&5
-configure:10046: $? = 0
-configure:10046: result: yes
-configure:10046: checking pcap.h presence
-configure:10046: gcc -E   conftest.c
-configure:10046: $? = 0
-configure:10046: result: yes
-configure:10046: checking for pcap.h
-configure:10046: result: yes
-configure:10054: checking for pcap_lib_version in -lpcap
-configure:10079: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE    conftest.c -lpcap   >&5
-configure:10079: $? = 0
-configure:10088: result: yes
-configure:10146: checking netinet/in.h usability
-configure:10146: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE   conftest.c >&5
-configure:10146: $? = 0
-configure:10146: result: yes
-configure:10146: checking netinet/in.h presence
-configure:10146: gcc -E   conftest.c
-configure:10146: $? = 0
-configure:10146: result: yes
-configure:10146: checking for netinet/in.h
-configure:10146: result: yes
-configure:10146: checking libipq.h usability
-configure:10146: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE   conftest.c >&5
+configure:8356: $? = 0
+configure:8369: result: no
+configure:8733: checking for gcc option to produce PIC
+configure:8740: result: -fPIC -DPIC
+configure:8748: checking if gcc PIC flag -fPIC -DPIC works
+configure:8766: gcc -c -g -O2  -fPIC -DPIC -DPIC conftest.c >&5
+configure:8770: $? = 0
+configure:8783: result: yes
+configure:8812: checking if gcc static flag -static works
+configure:8840: result: yes
+configure:8855: checking if gcc supports -c -o file.o
+configure:8876: gcc -c -g -O2  -o out/conftest2.o conftest.c >&5
+configure:8880: $? = 0
+configure:8902: result: yes
+configure:8910: checking if gcc supports -c -o file.o
+configure:8957: result: yes
+configure:8990: checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries
+configure:10253: result: yes
+configure:10290: checking whether -lc should be explicitly linked in
+configure:10298: gcc -c -g -O2  conftest.c >&5
+configure:10301: $? = 0
+configure:10316: gcc -shared  -fPIC -DPIC conftest.o  -v -Wl,-soname -Wl,conftest -o conftest 2\>\&1 \| /usr/bin/grep  -lc  \>/dev/null 2\>\&1
+configure:10319: $? = 0
+configure:10333: result: no
+configure:10493: checking dynamic linker characteristics
+configure:11074: gcc -o conftest -g -O2   -Wl,-rpath -Wl,/foo conftest.c  >&5
+configure:11074: $? = 0
+configure:11323: result: GNU/Linux ld.so
+configure:11445: checking how to hardcode library paths into programs
+configure:11470: result: immediate
+configure:12018: checking whether stripping libraries is possible
+configure:12023: result: yes
+configure:12058: checking if libtool supports shared libraries
+configure:12060: result: yes
+configure:12063: checking whether to build shared libraries
+configure:12088: result: yes
+configure:12091: checking whether to build static libraries
+configure:12095: result: yes
+configure:8912: checking for visibility support
+configure:8937: gcc -c -g -O2 -Werror -fvisibility=hidden  conftest.c >&5
+configure:8937: $? = 0
+configure:8946: result: yes
+configure:8977: checking CFLAGS for gcc -Wall
+configure:9004: gcc -c -g -O2 -fvisibility=hidden -pedantic -Werror  -Wall  conftest.c >&5
+configure:9004: $? = 0
+configure:9018: result: -Wall
+configure:9031: : CFLAGS="$CFLAGS $var"
+configure:9034: $? = 0
+configure:9041: checking CFLAGS for gcc -Wwrite-strings
+configure:9068: gcc -c -g -O2 -fvisibility=hidden -Wall -pedantic -Werror  -Wwrite-strings  conftest.c >&5
+configure:9068: $? = 0
+configure:9082: result: -Wwrite-strings
+configure:9095: : CFLAGS="$CFLAGS $var"
+configure:9098: $? = 0
+configure:9105: checking CFLAGS for gcc -Wsign-compare
+configure:9132: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -pedantic -Werror  -Wsign-compare  conftest.c >&5
+configure:9132: $? = 0
+configure:9146: result: -Wsign-compare
+configure:9159: : CFLAGS="$CFLAGS $var"
+configure:9162: $? = 0
+configure:9169: checking CFLAGS for gcc -Wcast-align
+configure:9196: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -pedantic -Werror  -Wcast-align  conftest.c >&5
+configure:9196: $? = 0
+configure:9210: result: -Wcast-align
+configure:9223: : CFLAGS="$CFLAGS $var"
+configure:9226: $? = 0
+configure:9233: checking CFLAGS for gcc -Wextra
+configure:9260: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -pedantic -Werror  -Wextra  conftest.c >&5
+configure:9260: $? = 0
+configure:9274: result: -Wextra
+configure:9287: : CFLAGS="$CFLAGS $var"
+configure:9290: $? = 0
+configure:9297: checking CFLAGS for gcc -Wformat
+configure:9324: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -pedantic -Werror  -Wformat  conftest.c >&5
+configure:9324: $? = 0
+configure:9338: result: -Wformat
+configure:9351: : CFLAGS="$CFLAGS $var"
+configure:9354: $? = 0
+configure:9361: checking CFLAGS for gcc -Wformat-security
+configure:9388: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -pedantic -Werror  -Wformat-security  conftest.c >&5
+configure:9388: $? = 0
+configure:9402: result: -Wformat-security
+configure:9415: : CFLAGS="$CFLAGS $var"
+configure:9418: $? = 0
+configure:9425: checking CFLAGS for gcc -Wno-unused-parameter
+configure:9452: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -pedantic -Werror  -Wno-unused-parameter  conftest.c >&5
+configure:9452: $? = 0
+configure:9466: result: -Wno-unused-parameter
+configure:9479: : CFLAGS="$CFLAGS $var"
+configure:9482: $? = 0
+configure:9489: checking CFLAGS for gcc -fno-strict-aliasing
+configure:9516: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -pedantic -Werror  -fno-strict-aliasing  conftest.c >&5
+configure:9516: $? = 0
+configure:9530: result: -fno-strict-aliasing
+configure:9543: : CFLAGS="$CFLAGS $var"
+configure:9546: $? = 0
+configure:9553: checking CFLAGS for gcc -fdiagnostics-show-option
+configure:9580: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -pedantic -Werror  -fdiagnostics-show-option  conftest.c >&5
+configure:9580: $? = 0
+configure:9594: result: -fdiagnostics-show-option
+configure:9607: : CFLAGS="$CFLAGS $var"
+configure:9610: $? = 0
+configure:9617: checking CFLAGS for gcc -pedantic -std=c99 -D_GNU_SOURCE
+configure:9644: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -Werror  -pedantic -std=c99 -D_GNU_SOURCE  conftest.c >&5
+configure:9644: $? = 0
+configure:9658: result: -pedantic -std=c99 -D_GNU_SOURCE
+configure:9671: : CFLAGS="$CFLAGS $var"
+configure:9674: $? = 0
+configure:9693: checking for getaddrinfo
+configure:9693: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE   conftest.c  >&5
+configure:9693: $? = 0
+configure:9693: result: yes
+configure:9733: checking for flex
+configure:9749: found /usr/bin/flex
+configure:9760: result: flex
+configure:9775: checking for flex 2.4 or higher
+configure:9787: result: yes
+configure:9803: checking for bison
+configure:9819: found /usr/bin/bison
+configure:9830: result: bison
+configure:9982: checking linux/if_ether.h usability
+configure:9982: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include conftest.c >&5
+configure:9982: $? = 0
+configure:9982: result: yes
+configure:9982: checking linux/if_ether.h presence
+configure:9982: gcc -E  -I/usr/include conftest.c
+configure:9982: $? = 0
+configure:9982: result: yes
+configure:9982: checking for linux/if_ether.h
+configure:9982: result: yes
+configure:9982: checking linux/if_packet.h usability
+configure:9982: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include conftest.c >&5
+configure:9982: $? = 0
+configure:9982: result: yes
+configure:9982: checking linux/if_packet.h presence
+configure:9982: gcc -E  -I/usr/include conftest.c
+configure:9982: $? = 0
+configure:9982: result: yes
+configure:9982: checking for linux/if_packet.h
+configure:9982: result: yes
+configure:9994: checking whether TPACKET2_HDRLEN is declared
+configure:9994: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include conftest.c >&5
+configure:9994: $? = 0
+configure:9994: result: yes
+configure:10010: checking whether PACKET_TX_RING is declared
+configure:10010: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include conftest.c >&5
+configure:10010: $? = 0
+configure:10010: result: yes
+configure:10049: checking pcap.h usability
+configure:10049: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include conftest.c >&5
+configure:10049: $? = 0
+configure:10049: result: yes
+configure:10049: checking pcap.h presence
+configure:10049: gcc -E  -I/usr/include conftest.c
+configure:10049: $? = 0
+configure:10049: result: yes
+configure:10049: checking for pcap.h
+configure:10049: result: yes
+configure:10057: checking for pcap_lib_version in -lpcap
+configure:10082: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include  conftest.c -lpcap   >&5
+configure:10082: $? = 0
+configure:10091: result: yes
+configure:10149: checking netinet/in.h usability
+configure:10149: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include conftest.c >&5
+configure:10149: $? = 0
+configure:10149: result: yes
+configure:10149: checking netinet/in.h presence
+configure:10149: gcc -E  -I/usr/include conftest.c
+configure:10149: $? = 0
+configure:10149: result: yes
+configure:10149: checking for netinet/in.h
+configure:10149: result: yes
+configure:10149: checking libipq.h usability
+configure:10149: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include conftest.c >&5
 conftest.c:64:10: fatal error: libipq.h: No such file or directory
    64 | #include <libipq.h>
       |          ^~~~~~~~~~
 compilation terminated.
-configure:10146: $? = 1
+configure:10149: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "daq"
@@ -555,14 +555,14 @@ configure: failed program was:
 | # include <unistd.h>
 | #endif
 | #include <libipq.h>
-configure:10146: result: no
-configure:10146: checking libipq.h presence
-configure:10146: gcc -E   conftest.c
+configure:10149: result: no
+configure:10149: checking libipq.h presence
+configure:10149: gcc -E  -I/usr/include conftest.c
 conftest.c:31:10: fatal error: libipq.h: No such file or directory
    31 | #include <libipq.h>
       |          ^~~~~~~~~~
 compilation terminated.
-configure:10146: $? = 1
+configure:10149: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "daq"
@@ -595,22 +595,22 @@ configure: failed program was:
 | #define HAVE_NETINET_IN_H 1
 | /* end confdefs.h.  */
 | #include <libipq.h>
-configure:10146: result: no
-configure:10146: checking for libipq.h
-configure:10146: result: no
-configure:10158: checking for linux/netfilter.h
-configure:10158: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE   conftest.c >&5
-configure:10158: $? = 0
-configure:10158: result: yes
-configure:10194: checking for netinet/in.h
-configure:10194: result: yes
-configure:10194: checking libnetfilter_queue/libnetfilter_queue.h usability
-configure:10194: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE   conftest.c >&5
+configure:10149: result: no
+configure:10149: checking for libipq.h
+configure:10149: result: no
+configure:10161: checking for linux/netfilter.h
+configure:10161: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include conftest.c >&5
+configure:10161: $? = 0
+configure:10161: result: yes
+configure:10197: checking for netinet/in.h
+configure:10197: result: yes
+configure:10197: checking libnetfilter_queue/libnetfilter_queue.h usability
+configure:10197: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include conftest.c >&5
 conftest.c:65:10: fatal error: libnetfilter_queue/libnetfilter_queue.h: No such file or directory
    65 | #include <libnetfilter_queue/libnetfilter_queue.h>
       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 compilation terminated.
-configure:10194: $? = 1
+configure:10197: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "daq"
@@ -677,14 +677,14 @@ configure: failed program was:
 | # include <unistd.h>
 | #endif
 | #include <libnetfilter_queue/libnetfilter_queue.h>
-configure:10194: result: no
-configure:10194: checking libnetfilter_queue/libnetfilter_queue.h presence
-configure:10194: gcc -E   conftest.c
+configure:10197: result: no
+configure:10197: checking libnetfilter_queue/libnetfilter_queue.h presence
+configure:10197: gcc -E  -I/usr/include conftest.c
 conftest.c:32:10: fatal error: libnetfilter_queue/libnetfilter_queue.h: No such file or directory
    32 | #include <libnetfilter_queue/libnetfilter_queue.h>
       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 compilation terminated.
-configure:10194: $? = 1
+configure:10197: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "daq"
@@ -718,29 +718,29 @@ configure: failed program was:
 | #define HAVE_NETINET_IN_H 1
 | /* end confdefs.h.  */
 | #include <libnetfilter_queue/libnetfilter_queue.h>
-configure:10194: result: no
-configure:10194: checking for libnetfilter_queue/libnetfilter_queue.h
-configure:10194: result: no
-configure:10206: checking for linux/netfilter.h
-configure:10206: result: yes
-configure:10239: checking for pcap.h
-configure:10239: result: yes
-configure:10249: checking for pcap_lib_version
-configure:10251: checking for pcap_lib_version in -lpcap
-configure:10285: result: yes
-configure:10300: checking for libpcap version >= "1.0.0"
-configure:10330: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE    conftest.c -lpcap -lpcap  >&5
-configure:10330: $? = 0
-configure:10330: ./conftest
-configure:10330: $? = 0
-configure:10340: result: yes
-configure:10375: checking for net/netmap.h
-configure:10375: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE   conftest.c >&5
+configure:10197: result: no
+configure:10197: checking for libnetfilter_queue/libnetfilter_queue.h
+configure:10197: result: no
+configure:10209: checking for linux/netfilter.h
+configure:10209: result: yes
+configure:10242: checking for pcap.h
+configure:10242: result: yes
+configure:10252: checking for pcap_lib_version
+configure:10254: checking for pcap_lib_version in -lpcap
+configure:10288: result: yes
+configure:10303: checking for libpcap version >= "1.0.0"
+configure:10333: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include  conftest.c -lpcap -lpcap  >&5
+configure:10333: $? = 0
+configure:10333: ./conftest
+configure:10333: $? = 0
+configure:10343: result: yes
+configure:10378: checking for net/netmap.h
+configure:10378: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include conftest.c >&5
 conftest.c:38:10: fatal error: net/netmap.h: No such file or directory
    38 | #include <net/netmap.h>
       |          ^~~~~~~~~~~~~~
 compilation terminated.
-configure:10375: $? = 1
+configure:10378: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "daq"
@@ -780,14 +780,14 @@ configure: failed program was:
 | 
 | 
 | #include <net/netmap.h>
-configure:10375: result: no
-configure:10375: checking for net/netmap_user.h
-configure:10375: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE   conftest.c >&5
+configure:10378: result: no
+configure:10378: checking for net/netmap_user.h
+configure:10378: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include conftest.c >&5
 conftest.c:38:10: fatal error: net/netmap_user.h: No such file or directory
    38 | #include <net/netmap_user.h>
       |          ^~~~~~~~~~~~~~~~~~~
 compilation terminated.
-configure:10375: $? = 1
+configure:10378: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "daq"
@@ -827,14 +827,14 @@ configure: failed program was:
 | 
 | 
 | #include <net/netmap_user.h>
-configure:10375: result: no
-configure:10392: checking whether NETMAP_API is declared
-configure:10392: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE   conftest.c >&5
+configure:10378: result: no
+configure:10395: checking whether NETMAP_API is declared
+configure:10395: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include conftest.c >&5
 conftest.c:36:29: fatal error: net/netmap.h: No such file or directory
    36 |                    #include <net/netmap.h>
       |                             ^~~~~~~~~~~~~~
 compilation terminated.
-configure:10392: $? = 1
+configure:10395: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "daq"
@@ -888,88 +888,88 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:10392: result: no
-configure:10592: checking for dlopen in -ldl
-configure:10617: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE    conftest.c -ldl   >&5
-configure:10617: $? = 0
-configure:10626: result: yes
-configure:10646: checking for inttypes.h
-configure:10646: result: yes
-configure:10646: checking for memory.h
-configure:10646: result: yes
-configure:10646: checking netdb.h usability
-configure:10646: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE   conftest.c >&5
-configure:10646: $? = 0
-configure:10646: result: yes
-configure:10646: checking netdb.h presence
-configure:10646: gcc -E   conftest.c
-configure:10646: $? = 0
-configure:10646: result: yes
-configure:10646: checking for netdb.h
-configure:10646: result: yes
-configure:10646: checking for netinet/in.h
-configure:10646: result: yes
-configure:10646: checking for stdint.h
-configure:10646: result: yes
-configure:10646: checking for stdlib.h
-configure:10646: result: yes
-configure:10646: checking for string.h
-configure:10646: result: yes
-configure:10646: checking sys/ioctl.h usability
-configure:10646: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE   conftest.c >&5
-configure:10646: $? = 0
-configure:10646: result: yes
-configure:10646: checking sys/ioctl.h presence
-configure:10646: gcc -E   conftest.c
-configure:10646: $? = 0
-configure:10646: result: yes
-configure:10646: checking for sys/ioctl.h
-configure:10646: result: yes
-configure:10646: checking sys/param.h usability
-configure:10646: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE   conftest.c >&5
-configure:10646: $? = 0
-configure:10646: result: yes
-configure:10646: checking sys/param.h presence
-configure:10646: gcc -E   conftest.c
-configure:10646: $? = 0
-configure:10646: result: yes
-configure:10646: checking for sys/param.h
-configure:10646: result: yes
-configure:10646: checking sys/socket.h usability
-configure:10646: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE   conftest.c >&5
-configure:10646: $? = 0
-configure:10646: result: yes
-configure:10646: checking sys/socket.h presence
-configure:10646: gcc -E   conftest.c
-configure:10646: $? = 0
-configure:10646: result: yes
-configure:10646: checking for sys/socket.h
-configure:10646: result: yes
-configure:10646: checking sys/time.h usability
-configure:10646: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE   conftest.c >&5
-configure:10646: $? = 0
-configure:10646: result: yes
-configure:10646: checking sys/time.h presence
-configure:10646: gcc -E   conftest.c
-configure:10646: $? = 0
-configure:10646: result: yes
-configure:10646: checking for sys/time.h
-configure:10646: result: yes
-configure:10646: checking for unistd.h
-configure:10646: result: yes
-configure:10658: checking for inline
-configure:10674: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE   conftest.c >&5
-configure:10674: $? = 0
-configure:10682: result: inline
-configure:10700: checking for size_t
-configure:10700: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE   conftest.c >&5
-configure:10700: $? = 0
-configure:10700: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE   conftest.c >&5
+configure:10395: result: no
+configure:10595: checking for dlopen in -ldl
+configure:10620: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include  conftest.c -ldl   >&5
+configure:10620: $? = 0
+configure:10629: result: yes
+configure:10649: checking for inttypes.h
+configure:10649: result: yes
+configure:10649: checking for memory.h
+configure:10649: result: yes
+configure:10649: checking netdb.h usability
+configure:10649: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include conftest.c >&5
+configure:10649: $? = 0
+configure:10649: result: yes
+configure:10649: checking netdb.h presence
+configure:10649: gcc -E  -I/usr/include conftest.c
+configure:10649: $? = 0
+configure:10649: result: yes
+configure:10649: checking for netdb.h
+configure:10649: result: yes
+configure:10649: checking for netinet/in.h
+configure:10649: result: yes
+configure:10649: checking for stdint.h
+configure:10649: result: yes
+configure:10649: checking for stdlib.h
+configure:10649: result: yes
+configure:10649: checking for string.h
+configure:10649: result: yes
+configure:10649: checking sys/ioctl.h usability
+configure:10649: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include conftest.c >&5
+configure:10649: $? = 0
+configure:10649: result: yes
+configure:10649: checking sys/ioctl.h presence
+configure:10649: gcc -E  -I/usr/include conftest.c
+configure:10649: $? = 0
+configure:10649: result: yes
+configure:10649: checking for sys/ioctl.h
+configure:10649: result: yes
+configure:10649: checking sys/param.h usability
+configure:10649: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include conftest.c >&5
+configure:10649: $? = 0
+configure:10649: result: yes
+configure:10649: checking sys/param.h presence
+configure:10649: gcc -E  -I/usr/include conftest.c
+configure:10649: $? = 0
+configure:10649: result: yes
+configure:10649: checking for sys/param.h
+configure:10649: result: yes
+configure:10649: checking sys/socket.h usability
+configure:10649: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include conftest.c >&5
+configure:10649: $? = 0
+configure:10649: result: yes
+configure:10649: checking sys/socket.h presence
+configure:10649: gcc -E  -I/usr/include conftest.c
+configure:10649: $? = 0
+configure:10649: result: yes
+configure:10649: checking for sys/socket.h
+configure:10649: result: yes
+configure:10649: checking sys/time.h usability
+configure:10649: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include conftest.c >&5
+configure:10649: $? = 0
+configure:10649: result: yes
+configure:10649: checking sys/time.h presence
+configure:10649: gcc -E  -I/usr/include conftest.c
+configure:10649: $? = 0
+configure:10649: result: yes
+configure:10649: checking for sys/time.h
+configure:10649: result: yes
+configure:10649: checking for unistd.h
+configure:10649: result: yes
+configure:10661: checking for inline
+configure:10677: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include conftest.c >&5
+configure:10677: $? = 0
+configure:10685: result: inline
+configure:10703: checking for size_t
+configure:10703: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include conftest.c >&5
+configure:10703: $? = 0
+configure:10703: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include conftest.c >&5
 conftest.c: In function 'main':
 conftest.c:80:21: error: expected expression before ')' token
    80 | if (sizeof ((size_t)))
       |                     ^
-configure:10700: $? = 1
+configure:10703: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "daq"
@@ -1055,126 +1055,126 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:10700: result: yes
-configure:10711: checking for uint16_t
-configure:10711: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE   conftest.c >&5
-configure:10711: $? = 0
-configure:10711: result: yes
-configure:10723: checking for uint32_t
-configure:10723: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE   conftest.c >&5
-configure:10723: $? = 0
-configure:10723: result: yes
-configure:10737: checking for uint64_t
-configure:10737: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE   conftest.c >&5
-configure:10737: $? = 0
-configure:10737: result: yes
-configure:10751: checking for uint8_t
-configure:10751: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE   conftest.c >&5
-configure:10751: $? = 0
-configure:10751: result: yes
-configure:10769: checking for stdlib.h
-configure:10769: result: yes
-configure:10779: checking for GNU libc compatible malloc
-configure:10803: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE    conftest.c  >&5
-configure:10803: $? = 0
-configure:10803: ./conftest
-configure:10803: $? = 0
-configure:10813: result: yes
-configure:10840: checking for stdlib.h
-configure:10840: result: yes
-configure:10840: checking for unistd.h
-configure:10840: result: yes
-configure:10840: checking for sys/param.h
-configure:10840: result: yes
-configure:10860: checking for getpagesize
-configure:10860: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE    conftest.c  >&5
-configure:10860: $? = 0
-configure:10860: result: yes
-configure:10869: checking for working mmap
-configure:11016: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE    conftest.c  >&5
-configure:11016: $? = 0
-configure:11016: ./conftest
-configure:11016: $? = 0
-configure:11026: result: yes
-configure:11038: checking for gethostbyname
-configure:11038: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE    conftest.c  >&5
-configure:11038: $? = 0
-configure:11038: result: yes
-configure:11038: checking for getpagesize
-configure:11038: result: yes
-configure:11038: checking for memset
-configure:11038: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE    conftest.c  >&5
+configure:10703: result: yes
+configure:10714: checking for uint16_t
+configure:10714: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include conftest.c >&5
+configure:10714: $? = 0
+configure:10714: result: yes
+configure:10726: checking for uint32_t
+configure:10726: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include conftest.c >&5
+configure:10726: $? = 0
+configure:10726: result: yes
+configure:10740: checking for uint64_t
+configure:10740: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include conftest.c >&5
+configure:10740: $? = 0
+configure:10740: result: yes
+configure:10754: checking for uint8_t
+configure:10754: gcc -c -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include conftest.c >&5
+configure:10754: $? = 0
+configure:10754: result: yes
+configure:10772: checking for stdlib.h
+configure:10772: result: yes
+configure:10782: checking for GNU libc compatible malloc
+configure:10806: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include  conftest.c  >&5
+configure:10806: $? = 0
+configure:10806: ./conftest
+configure:10806: $? = 0
+configure:10816: result: yes
+configure:10843: checking for stdlib.h
+configure:10843: result: yes
+configure:10843: checking for unistd.h
+configure:10843: result: yes
+configure:10843: checking for sys/param.h
+configure:10843: result: yes
+configure:10863: checking for getpagesize
+configure:10863: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include  conftest.c  >&5
+configure:10863: $? = 0
+configure:10863: result: yes
+configure:10872: checking for working mmap
+configure:11021: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include  conftest.c  >&5
+configure:11021: $? = 0
+configure:11021: ./conftest
+configure:11021: $? = 0
+configure:11031: result: yes
+configure:11043: checking for gethostbyname
+configure:11043: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include  conftest.c  >&5
+configure:11043: $? = 0
+configure:11043: result: yes
+configure:11043: checking for getpagesize
+configure:11043: result: yes
+configure:11043: checking for memset
+configure:11043: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include  conftest.c  >&5
 conftest.c:76:6: warning: conflicting types for built-in function 'memset'; expected 'void *(void *, int,  long unsigned int)' [-Wbuiltin-declaration-mismatch]
    76 | char memset ();
       |      ^~~~~~
 conftest.c:64:1: note: 'memset' is declared in header '<string.h>'
    63 | # include <limits.h>
    64 | #else
-configure:11038: $? = 0
-configure:11038: result: yes
-configure:11038: checking for munmap
-configure:11038: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE    conftest.c  >&5
-configure:11038: $? = 0
-configure:11038: result: yes
-configure:11038: checking for socket
-configure:11038: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE    conftest.c  >&5
-configure:11038: $? = 0
-configure:11038: result: yes
-configure:11038: checking for strchr
-configure:11038: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE    conftest.c  >&5
+configure:11043: $? = 0
+configure:11043: result: yes
+configure:11043: checking for munmap
+configure:11043: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include  conftest.c  >&5
+configure:11043: $? = 0
+configure:11043: result: yes
+configure:11043: checking for socket
+configure:11043: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include  conftest.c  >&5
+configure:11043: $? = 0
+configure:11043: result: yes
+configure:11043: checking for strchr
+configure:11043: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include  conftest.c  >&5
 conftest.c:79:6: warning: conflicting types for built-in function 'strchr'; expected 'char *(const char *, int)' [-Wbuiltin-declaration-mismatch]
    79 | char strchr ();
       |      ^~~~~~
 conftest.c:67:1: note: 'strchr' is declared in header '<string.h>'
    66 | # include <limits.h>
    67 | #else
-configure:11038: $? = 0
-configure:11038: result: yes
-configure:11038: checking for strcspn
-configure:11038: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE    conftest.c  >&5
+configure:11043: $? = 0
+configure:11043: result: yes
+configure:11043: checking for strcspn
+configure:11043: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include  conftest.c  >&5
 conftest.c:80:6: warning: conflicting types for built-in function 'strcspn'; expected 'long unsigned int(const char *, const char *)' [-Wbuiltin-declaration-mismatch]
    80 | char strcspn ();
       |      ^~~~~~~
 conftest.c:68:1: note: 'strcspn' is declared in header '<string.h>'
    67 | # include <limits.h>
    68 | #else
-configure:11038: $? = 0
-configure:11038: result: yes
-configure:11038: checking for strdup
-configure:11038: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE    conftest.c  >&5
-configure:11038: $? = 0
-configure:11038: result: yes
-configure:11038: checking for strerror
-configure:11038: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE    conftest.c  >&5
-configure:11038: $? = 0
-configure:11038: result: yes
-configure:11038: checking for strrchr
-configure:11038: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE    conftest.c  >&5
+configure:11043: $? = 0
+configure:11043: result: yes
+configure:11043: checking for strdup
+configure:11043: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include  conftest.c  >&5
+configure:11043: $? = 0
+configure:11043: result: yes
+configure:11043: checking for strerror
+configure:11043: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include  conftest.c  >&5
+configure:11043: $? = 0
+configure:11043: result: yes
+configure:11043: checking for strrchr
+configure:11043: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include  conftest.c  >&5
 conftest.c:83:6: warning: conflicting types for built-in function 'strrchr'; expected 'char *(const char *, int)' [-Wbuiltin-declaration-mismatch]
    83 | char strrchr ();
       |      ^~~~~~~
 conftest.c:71:1: note: 'strrchr' is declared in header '<string.h>'
    70 | # include <limits.h>
    71 | #else
-configure:11038: $? = 0
-configure:11038: result: yes
-configure:11038: checking for strstr
-configure:11038: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE    conftest.c  >&5
+configure:11043: $? = 0
+configure:11043: result: yes
+configure:11043: checking for strstr
+configure:11043: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include  conftest.c  >&5
 conftest.c:84:6: warning: conflicting types for built-in function 'strstr'; expected 'char *(const char *, const char *)' [-Wbuiltin-declaration-mismatch]
    84 | char strstr ();
       |      ^~~~~~
 conftest.c:72:1: note: 'strstr' is declared in header '<string.h>'
    71 | # include <limits.h>
    72 | #else
-configure:11038: $? = 0
-configure:11038: result: yes
-configure:11038: checking for strtoul
-configure:11038: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE    conftest.c  >&5
-configure:11038: $? = 0
-configure:11038: result: yes
-configure:11157: checking that generated files are newer than configure
-configure:11163: result: done
-configure:11222: creating ./config.status
+configure:11043: $? = 0
+configure:11043: result: yes
+configure:11043: checking for strtoul
+configure:11043: gcc -o conftest -g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE  -I/usr/include  conftest.c  >&5
+configure:11043: $? = 0
+configure:11043: result: yes
+configure:11162: checking that generated files are newer than configure
+configure:11168: result: done
+configure:11227: creating ./config.status
 
 ## ---------------------- ##
 ## Running config.status. ##
@@ -1199,13 +1199,22 @@ config.status:1149: creating sfbpf/Makefile
 config.status:1149: creating config.h
 config.status:1330: config.h is unchanged
 config.status:1378: executing depfiles commands
+config.status:1455: cd api       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for 'am--depfiles'.
+config.status:1460: $? = 0
+config.status:1455: cd os-daq-modules       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for 'am--depfiles'.
+config.status:1460: $? = 0
+config.status:1455: cd sfbpf       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for 'am--depfiles'.
+config.status:1460: $? = 0
 config.status:1378: executing libtool commands
 
 ## ---------------- ##
 ## Cache variables. ##
 ## ---------------- ##
 
-ac_cv_build=x86_64-unknown-linux-gnu
+ac_cv_build=x86_64-pc-linux-gnu
 ac_cv_c_compiler_gnu=yes
 ac_cv_c_inline=inline
 ac_cv_c_uint16_t=yes
@@ -1275,7 +1284,7 @@ ac_cv_header_sys_stat_h=yes
 ac_cv_header_sys_time_h=yes
 ac_cv_header_sys_types_h=yes
 ac_cv_header_unistd_h=yes
-ac_cv_host=x86_64-unknown-linux-gnu
+ac_cv_host=x86_64-pc-linux-gnu
 ac_cv_lbl_flex_v24=yes
 ac_cv_lib_dl_dlopen=yes
 ac_cv_lib_pcap_pcap_lib_version=yes
@@ -1350,7 +1359,7 @@ lt_cv_truncate_bin='/usr/bin/dd bs=4096 count=1'
 ## Output variables. ##
 ## ----------------- ##
 
-ACLOCAL='${SHELL} /home/ubuntu/Documentos/ProyectoIDS/public/daq-2.0.7/missing aclocal-1.15'
+ACLOCAL='${SHELL} /home/ubuntu/Documentos/ProyectoIDS/public/daq-2.0.7/missing aclocal-1.16'
 AMDEPBACKSLASH='\'
 AMDEP_FALSE='#'
 AMDEP_TRUE=''
@@ -1362,7 +1371,7 @@ AM_V='$(V)'
 AR='ar'
 AUTOCONF='${SHELL} /home/ubuntu/Documentos/ProyectoIDS/public/daq-2.0.7/missing autoconf'
 AUTOHEADER='${SHELL} /home/ubuntu/Documentos/ProyectoIDS/public/daq-2.0.7/missing autoheader'
-AUTOMAKE='${SHELL} /home/ubuntu/Documentos/ProyectoIDS/public/daq-2.0.7/missing automake-1.15'
+AUTOMAKE='${SHELL} /home/ubuntu/Documentos/ProyectoIDS/public/daq-2.0.7/missing automake-1.16'
 AWK='gawk'
 BUILD_AFPACKET_MODULE_FALSE='#'
 BUILD_AFPACKET_MODULE_TRUE=''
@@ -1386,12 +1395,12 @@ CC='gcc'
 CCDEPMODE='depmode=gcc3'
 CFLAGS='-g -O2 -fvisibility=hidden -Wall -Wwrite-strings -Wsign-compare -Wcast-align -Wextra -Wformat -Wformat-security -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -pedantic -std=c99 -D_GNU_SOURCE'
 CPP='gcc -E'
-CPPFLAGS=' '
+CPPFLAGS=' -I/usr/include'
 CYGPATH_W='echo'
 DEFS='-DHAVE_CONFIG_H'
 DEPDIR='.deps'
 DLLTOOL='false'
-DNET_LDFLAGS=''
+DNET_LDFLAGS='-ldumbnet'
 DSYMUTIL=''
 DUMPBIN=''
 ECHO_C=''
@@ -1457,21 +1466,21 @@ am__quote=''
 am__tar='$${TAR-tar} chof - "$$tardir"'
 am__untar='$${TAR-tar} xf -'
 bindir='${exec_prefix}/bin'
-build='x86_64-unknown-linux-gnu'
+build='x86_64-pc-linux-gnu'
 build_alias=''
 build_cpu='x86_64'
 build_os='linux-gnu'
-build_vendor='unknown'
+build_vendor='pc'
 datadir='${datarootdir}'
 datarootdir='${prefix}/share'
 docdir='${datarootdir}/doc/${PACKAGE_TARNAME}'
 dvidir='${docdir}'
 exec_prefix='${prefix}'
-host='x86_64-unknown-linux-gnu'
+host='x86_64-pc-linux-gnu'
 host_alias=''
 host_cpu='x86_64'
 host_os='linux-gnu'
-host_vendor='unknown'
+host_vendor='pc'
 htmldir='${docdir}'
 includedir='${prefix}/include'
 infodir='${datarootdir}/info'
