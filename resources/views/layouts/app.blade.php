@@ -35,7 +35,7 @@
         </div>
         <!-- end Topbar -->
         <!-- ========== Left Sidebar Start ========== -->
-        <!--           
+                
 <div class="left-side-menu">
 
     <div class="slimscroll-menu">
@@ -62,13 +62,13 @@
                 <li>
                     <a href="javascript: void(0);" class="waves-effect">
                         <i class="ion-md-basket"></i>
-                        <span> UI Elements </span>
+                        <span> Reglas </span>
                         <span class="menu-arrow"></span>
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
 
-                        <li><a href="ui-typography.html">Typography</a></li>
-                        <li><a href="ui-buttons.html">Buttons</a></li>
+                        <li><a href="{{ url('/rules') }}">Exportar txt</a></li>
+                        {{-- <li><a href="ui-buttons.html">Buttons</a></li>
                         <li><a href="ui-fontawesome.html">Font Awesome Icons</a></li>
                         <li><a href="ui-materialdesign.html">Material Design Icons</a></li>
                         <li><a href="ui-ionicons.html">Ion Icons</a></li>
@@ -78,11 +78,11 @@
                         <li><a href="ui-bootstrap-ui.html">BS Elements</a></li>
                         <li><a href="ui-progressbars.html">Progress Bars</a></li>
                         <li><a href="ui-notification.html">Notification</a></li>
-                        <li><a href="ui-sweet-alert.html">Sweet-Alert</a></li>
+                        <li><a href="ui-sweet-alert.html">Sweet-Alert</a></li> --}}
                     </ul>
                 </li>
 
-                <li>
+                {{-- <li>
                     <a href="javascript: void(0);" class="waves-effect">
                         <i class="ion-ios-apps"></i>
                         <span> Components </span>
@@ -96,9 +96,9 @@
                         <li><a href="components-calendar.html">Calendar</a></li>
                         <li><a href="components-range-sliders.html">Range Slider</a></li>
                     </ul>
-                </li>
+                </li> --}}
 
-                <li>
+                {{-- <li>
                     <a href="javascript: void(0);" class="waves-effect">
                         <i class="ion-md-speedometer"></i>
                         <span>  Forms  </span>
@@ -235,12 +235,12 @@
                             </ul>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
             </ul>
         </div>
         <div class="clearfix"></div>
     </div>
-</div>-->
+</div>
         <!-- Left Sidebar End -->
 
         <!-- ============================================================== -->

@@ -2,6 +2,8 @@
 
 @section('content')
 <div class="container">
+
+    <!-- Start Content-->
     <div class="container-fluid">
         @include('layouts.menu')
 
