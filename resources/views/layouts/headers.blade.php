@@ -2,7 +2,7 @@
 
    
 
-    <li class="dropdown notification-list">
+    {{-- <li class="dropdown notification-list">
         <a class="nav-link dropdown-toggle  waves-effect" data-toggle="dropdown" href="#" role="button"
             aria-haspopup="false" aria-expanded="false">
             <i class="mdi mdi-email-outline noti-icon"></i>
@@ -78,9 +78,9 @@
             </a>
 
         </div>
-    </li>
+    </li> --}}
 
-    <li class="dropdown notification-list">
+    {{-- <li class="dropdown notification-list">
         <a class="nav-link dropdown-toggle  waves-effect" data-toggle="dropdown" href="#" role="button"
             aria-haspopup="false" aria-expanded="false">
             <i class="mdi mdi-bell-outline noti-icon"></i>
@@ -168,9 +168,14 @@
             </a>
 
         </div>
-    </li>
+    </li> --}}
 
-    <li class="dropdown notification-list">
+    {{-- <li class="dropdown notification-list">
+        @if (Route::has('login'))
+            
+        @else
+            
+        @endif
         <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect" data-toggle="dropdown" href="#"
             role="button" aria-haspopup="false" aria-expanded="false">
             <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
@@ -211,6 +216,71 @@
             </a>
 
         </div>
+    </li> --}}
+    
+    <li class="dropdown notification-list">
+        @if (Route::has('login'))
+
+        @auth
+        <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown"
+            href="#" role="button" aria-haspopup="false" aria-expanded="false">
+            <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
+            <span class="pro-user-name ml-1">
+                {{ Auth::user()->name }} <i class="mdi mdi-chevron-down"></i>
+            </span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+            <!-- item-->
+            <div class="dropdown-header noti-title">
+                <a href="{{ url('/') }}">
+                    <h6 class="text-overflow m-0">Inicio</h6>
+                </a>
+            </div>
+
+            <!-- item-->
+            {{-- <a href="{{ route('profile.show') }}" class="dropdown-item notify-item">
+                <i class="mdi mdi-account-outline"></i>
+
+                <span>Profile</span>
+            </a>
+            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                <i class="mdi mdi-settings-outline"></i>
+                <span>Settings</span>
+            </a>
+            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                <i class="mdi mdi-lock-outline"></i>
+                <span>Lock Screen</span>
+            </a> --}}
+
+            <div class="dropdown-divider"></div>
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+
+                <x-jet-dropdown-link href="{{ route('logout') }}" onclick="event.preventDefault();
+                                this.closest('form').submit();">
+                    <i class="mdi mdi-logout-variant"></i>
+                    <span>Salir</span>
+                </x-jet-dropdown-link>
+            </form>
+        </div>
+
+
+        @else
+        <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light"
+            href="{{ route('login') }}">
+            <span class="pro-user-name ml-1">
+                Iniciar sesión
+            </span>
+        </a>
+
+
+
+        {{-- @if (Route::has('register'))
+        <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
+        @endif --}}
+        @endauth
+
+        @endif
     </li>
 
     <li class="dropdown notification-list">

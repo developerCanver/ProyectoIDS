@@ -1,0 +1,20 @@
+//desavilitar contraseña utlizando sudo
+sudo -i
+contraseña
+//crear una copia
+cp /etc/sudoers /etc/sudoers.1
+mcedit /etc/sudoers
+//si no reconoce comando mcedit
+apt install mc
+ubuntu ALL=(ALL) NOPASSWD: ALL
+//ubuntu nombre de usuario pc
+
+//verifiacar errores en la sintaxis sudoers
+visudo -c
+//retorna OK
+//el usuario ubuntu debe de pertenecer al usuario sudo
+//para aplicar ubuntu sudo
+addgroup ubuntu sudo
+//retorna El usuario `ubuntu' ya es un miembro de `sudo'.
+//listo para salir 
+logout

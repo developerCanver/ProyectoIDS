@@ -19,7 +19,7 @@ use App\Http\Controllers\Rules;
 
 Route::get('/', function () {
     return view('inicio');
-});
+})->middleware('auth');
 Route::get('/descargar', [Descargar::class, 'index']);
 
 Route::get('/rules', [Rules::class, 'index']);
@@ -29,3 +29,7 @@ Route::get('/instalarsnort', [InstalarSnort::class, 'index']);
 Route::get('/actualizar', [Actualizar::class, 'index']);
 
 
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');

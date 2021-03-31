@@ -16,6 +16,7 @@
         //shell_exec('apt-get update');
         //shell_exec('apt-get upgrade');
         //shell_exec('sudo apt-get dist-upgrade -y');
+        //primeras sentencias de codigo
         
             //echo("Iniciando Descarga Snort <br>");
             echo('instalando automake <br><br>');
