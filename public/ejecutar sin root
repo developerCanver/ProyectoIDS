@@ -6,9 +6,14 @@ cp /etc/sudoers /etc/sudoers.1
 mcedit /etc/sudoers
 //si no reconoce comando mcedit
 apt install mc
+//opc 1
+%admin ALL=(ALL) NOPASSWD: ALL
+logout
+listo
+
+//opc 2
 ubuntu ALL=(ALL) NOPASSWD: ALL
 //ubuntu nombre de usuario pc
-
 //verifiacar errores en la sintaxis sudoers
 visudo -c
 //retorna OK
