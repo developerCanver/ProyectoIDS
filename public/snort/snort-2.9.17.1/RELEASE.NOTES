@@ -1,0 +1,11 @@
+2021-03-19 - Snort 2.9.17.1
+
+[*] Improvements / Fix
+	  Fixed wrong reference to configuration during reload.
+
+	  Fixed possible memleak in appid.
+
+	  Fixed a race-condition in http preproc and IPS.
+
+	  Fixed a race-condition in stream preproc.
+

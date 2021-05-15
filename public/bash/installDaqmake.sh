@@ -1,8 +1,9 @@
 #Carlos 1Ruiz
 #!/bin/bash
 
+cd snort
 cd daq-2.0.7/
-#autoreconf -f -i
+autoreconf -f -i
 #instalacion de 2 paquete DAQ
 make
 

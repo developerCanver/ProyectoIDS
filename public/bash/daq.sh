@@ -1,25 +1,31 @@
 #Carlos 1Ruiz
 #!/bin/bash
 
+  if [ -d snort ]
+  then
+    cd snort
+  else
+    sudo  mkdir snort
+    sudo chown -R ubuntu:ubuntu snort
+    cd snort
+  fi
+
 if [ -f daq-2.0.7.tar.gz ]
 then
-  echo 'Descarga Completa DAQ'
+  if [ -f daq-2.0.7 ]
+  then
+    echo 'completa'
+  else
+    tar xvzf daq-2.0.7.tar.gz
+  fi
 else
-  echo 'Descargando'
+  wget wget https://www.snort.org/downloads/snort/daq-2.0.7.tar.gz
+  tar xvzf daq-2.0.7.tar.gz
+  if [ -f daq-2.0.7 ]
+  then
+    echo 'completa'
+  else
+    tar xvzf daq-2.0.7.tar.gz
+  fi
+  echo 'completa'
 fi
-
-#for dir in $@
-#do
-#  if [ -d $dir ]
-#  then
-#    echo “La capeta $dir ya existe.”
-#Else
-#    mkdir $dir
- #   if [ $? -eq 0 +
-#    then
- #     echo “$dir se ha creaco con éxito”
-#    else
-#      echo “Ups! Algo ha fallado al crear $dir”
-#    fi
-#  fi
-#done
