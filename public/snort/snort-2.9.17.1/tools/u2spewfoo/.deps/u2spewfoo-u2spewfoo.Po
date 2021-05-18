@@ -78,6 +78,10 @@ u2spewfoo-u2spewfoo.o: u2spewfoo.c /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/socket2.h /usr/include/netinet/in.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/x86_64-linux-gnu/bits/in.h /usr/include/arpa/inet.h \
+ /usr/include/uuid/uuid.h /usr/include/x86_64-linux-gnu/sys/time.h \
+ /usr/include/time.h /usr/include/x86_64-linux-gnu/bits/time.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
  ../../src/sfutil/Unified2_common.h \
  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h
@@ -267,6 +271,18 @@ u2spewfoo-u2spewfoo.o: u2spewfoo.c /usr/include/stdc-predef.h \
 /usr/include/x86_64-linux-gnu/bits/in.h:
 
 /usr/include/arpa/inet.h:
+
+/usr/include/uuid/uuid.h:
+
+/usr/include/x86_64-linux-gnu/sys/time.h:
+
+/usr/include/time.h:
+
+/usr/include/x86_64-linux-gnu/bits/time.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
 
 ../../src/sfutil/Unified2_common.h:
 

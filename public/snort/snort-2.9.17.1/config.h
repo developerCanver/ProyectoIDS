@@ -150,7 +150,7 @@
 /* #undef HAVE_LIBTIRPC */
 
 /* Define to 1 if you have the `uuid' library (-luuid). */
-/* #undef HAVE_LIBUUID */
+#define HAVE_LIBUUID 1
 
 /* Define to 1 if you have the `z' library (-lz). */
 #define HAVE_LIBZ 1
@@ -159,7 +159,7 @@
 /* #undef HAVE_LINUXTHREADS */
 
 /* Define to 1 if you have the <lzma.h> header file. */
-/* #undef HAVE_LZMA_H */
+#define HAVE_LZMA_H 1
 
 /* Define to 1 if you have the `mallinfo' function. */
 #define HAVE_MALLINFO 1
@@ -258,7 +258,7 @@
 #define HAVE_UNISTD_H 1
 
 /* Define to 1 if you have the <uuid/uuid.h> header file. */
-/* #undef HAVE_UUID_UUID_H */
+#define HAVE_UUID_UUID_H 1
 
 /* Define to 1 if the system has the type `u_int16_t'. */
 #define HAVE_U_INT16_T 1

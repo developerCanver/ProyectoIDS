@@ -15,29 +15,25 @@
                 <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
                     <use xlink:href="#info-fill" /></svg>
                 <div class="m-3">
-                    Iniciando Descarga Snort
+                    Configuración Red
                 </div>
             </div>
         </div>
-
-
-
         <div class="row d-flex justify-content-center">
             @php
 
-            $snort = shell_exec('sh bash/snort.sh');
-            $daq = shell_exec('sh bash/daq.sh');
-            $fichero_daq = 'snort/daq-2.0.7';
-            $fichero_snort = 'snort/snort-2.9.17.1';
+            $snort = shell_exec('sh bash/configuracionWeb.sh');
+               //print_r($snort);
+         
             @endphp
 
 
-            @if (file_exists($fichero_snort) && file_exists($fichero_daq))
+          @if ($snort != 'ERROR')
             <div class="alert alert-success d-flex align-items-center" role="alert">
                 <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
                     <use xlink:href="#check-circle-fill" /></svg>
                 <div class="m-3">
-                    Snort sea descargado <strong> sastifactoriamente</strong>
+                    Snort aplicó <strong> sastifactoriamente</strong> la configuración 
                 </div>
             </div>
             @else
@@ -45,10 +41,10 @@
                 <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
                     <use xlink:href="#exclamation-triangle-fill" /></svg>
                 <div class="m-3">
-                    Se interrumpiò la descargar <strong> vuelve a intertarlo</strong>, Por favor!
+                    Se interrumpiò la configuración <strong> vuelve a intertarlo</strong>, Por favor!
                 </div>
             </div>
-            @endif
+            @endif 
         </div>
     </div>
 </div>

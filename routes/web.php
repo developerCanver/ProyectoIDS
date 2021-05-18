@@ -17,6 +17,18 @@ use App\Http\Controllers\Rules;
 |
 */
 
+Route::get('/requisitos', function () {
+    return view('requisitos');
+})->middleware('auth');
+
+Route::get('/configurar', function () {
+    return view('configurar');
+})->middleware('auth');
+
+Route::get('/librerias', function () {
+    return view('librerias');
+})->middleware('auth');
+
 Route::get('/', function () {
     return view('inicio');
 })->middleware('auth');
