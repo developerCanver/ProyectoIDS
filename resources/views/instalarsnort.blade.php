@@ -21,85 +21,19 @@
         @php
 
         exec('sh bash/installSnortConfig.sh', $snortConfig);
-        $flex=0;
-        $libpcap=0;
-        $msjConfig='';
-        $msjMake='';
-        $msjSudoMake='';
-        $SnoortPCRE=0;
-        $Snotrlibdumbnet=0;
-        $Snotrzlib=0;
-        $SnotrLuaJIT=0;
+  
 
+ 
         foreach ($snortConfig as $key => $value) {
-        $value= trim($value);
-        //echo ($key ." : ".$value."<br>");
-
-        if ($value=='checking for pcre.h... no') {
-        // echo('*************ERROR LIBPCRE********************');
-        $SnoortPCRE=1;
-
-        }
-        if ($value=='checking for dumbnet.h... no') {
-        //echo('*************ERROR LIBPCRE********************');
-        $Snotrlibdumbnet=1;
-        }
-        if ($value=='checking for zlib.h... no') {
-        //echo('*************ERROR zlib********************');
-        $Snotrzlib=1;
-        }
-        if ($value=='checking for luajit... no') {
-        //echo('*************ERROR Libreria LuaJIT********************');
-        $SnotrLuaJIT=1;
-        }
-        }
-
-        /* encontrado fallas y darles soluciones*/
-        if ($SnoortPCRE==1) {
-        //echo('*************Ejecutando solucion********************');
-        exec('sh bash/ErrorSnoortPCRE.sh', $ErrorSnoortPCRE);
-        foreach ($ErrorSnoortPCRE as $key => $value) {
-        //echo ($key ." : ".$value."<br>");
-        }
-        }
-
-        if ($Snotrlibdumbnet==1) {
-        //echo('*************Ejecutando solucion**** Snotrlibdumbnet****************');
-        exec('sh bash/ErrorSnotrlibdumbnet.sh', $ERRSnotrlibdumbnet);
-
-        foreach ($ERRSnotrlibdumbnet as $key => $value) {
-        //echo ($key ." : ".$value."<br>");
-        }
-        }
-
-        if ($Snotrzlib==1) {
-        // echo('*************Ejecutando solucion**** Snotrzlib****************');
-        exec('sh bash/ErrorSnotrzlib.sh', $Snotrzlibs);
-
-        foreach ($Snotrzlibs as $key => $value) {
-        //echo ($key ." : ".$value."<br>");
-        }
-        }
-        if ($SnotrLuaJIT==1) {
-        //echo('*************Ejecutando solucion**** Snotrzlib****************');
-        exec('sh bash/ErrorSnortSnotrLuaJIT.sh', $SnotrLuaJITs);
-
-        foreach ($SnotrLuaJITs as $key => $value) {
-        echo ($key ." : ".$value."<br>");
-        }
-        }
-
-        //echo($SnoortPCRE.'<br>');
-        //echo($Snotrlibdumbnet.'<br>');
-        //echo($Snotrzlib.'<br>');
-       // echo($SnotrLuaJIT.'<br>');
-
+                $value= trim($value);
+                echo ($key ." : ".$value."<br>");
+            }
         @endphp
 
 
 
 
-        <div class="row d-flex justify-content-center">
+        {{-- <div class="row d-flex justify-content-center">
             @if ($SnoortPCRE == 0 && $Snotrlibdumbnet == 0 && $Snotrzlib == 0 && $SnotrLuaJIT == 0)
             <div class="alert alert-success d-flex align-items-center" role="alert">
                 <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
@@ -118,7 +52,7 @@
             </div>
 
             @endif
-        </div>
+        </div> --}}
 
     </div>
 </div>

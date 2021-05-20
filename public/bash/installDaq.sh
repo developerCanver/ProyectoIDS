@@ -1,11 +1,14 @@
 #Carlos 1Ruiz
 #!/bin/bash
- cd snort
-cd daq-2.0.7/
-sudo dpkg --configure -a
-sudo apt-get install build-essential -y
-autoreconf -f -i
-./configure
+
+	wget https://github.com/snort3/libdaq/archive/refs/tags/v3.0.3.tar.gz
+	tar -xzvf v3.0.3.tar.gz
+	cd libdaq-3.0.3
+	./bootstrap
+	./configure
+	make
+	sudo make install
+	cd ..
 
 if [ $? -eq 0 ]
   then 

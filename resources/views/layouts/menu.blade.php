@@ -101,7 +101,7 @@
     </div>
       <div class="col-xl-3 col-sm-6">
           <div class="card bg-primary">
-              <a href="{{ url('/configurar') }}" class="media-body ">
+              <a href="{{ url('/configurarweb') }}" class="media-body ">
                   <div class="card-body widget-style-2">
                       <div class="text-white media">
                           <div class="media-body align-self-center">

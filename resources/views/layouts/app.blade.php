@@ -83,6 +83,7 @@
                     <ul class="nav-second-level" aria-expanded="false">
 
                         <li><a href="{{ url('/rules') }}">Exportar txt</a></li>
+                        <li><a href="{{ url('/correrRegla') }}">Correr Regla</a></li>
                         {{-- <li><a href="ui-buttons.html">Buttons</a></li>
                         <li><a href="ui-fontawesome.html">Font Awesome Icons</a></li>
                         <li><a href="ui-materialdesign.html">Material Design Icons</a></li>

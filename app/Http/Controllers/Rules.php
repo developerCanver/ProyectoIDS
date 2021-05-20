@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Redirect;
+use Alert;
 class Rules extends Controller
 {
     public function __construct()
@@ -16,33 +17,57 @@ class Rules extends Controller
     }
     public function store(Request $request) { 
 
-        
         exec('sh bash/rules.sh', $rules);
         //dd($rules);
         
         $ar=fopen("local.rules", "a+") or die ("Error al crear el archivo");
         
         $acccion=request('acccion');
-        $proto=request('proto');
-        $ip=request('ip');
-        $mascara=request('mascara');
-        $direction=request('direction');
+        $protocolo=request('protocolo');
+        $ipOrigen=request('ipOrigen');
+        $puertoOrigen=request('puertoOrigen');
+        $direccion=request('direccion');
+        $ipDestino=request('ipDestino');
+        $origenDestino=request('origenDestino');
+        $origenDestino=request('origenDestino');
 
-        fwrite($ar,'# $Id: local.rules,v 1.11 2021/03/13 20:15:44 bmc Exp $'. PHP_EOL);
-        fwrite($ar,'#----------------------------------'. PHP_EOL);
-        fwrite($ar,'# LOCAL RULES'. PHP_EOL);
-        fwrite($ar,'# Este es un ejemplopara crear el archivo RULEs para Snort'. PHP_EOL);
+   
+
+        $sid=0;
+        if ($protocolo=='icmp') {
+            $sid=1;
+        }
+        if ($protocolo=='tcp') {
+            $sid=2;
+        }
+        if ($protocolo=='ip') {
+            $sid=3;
+        }
+        if ($protocolo=='udp') {
+            $sid=4;
+        }
+       
+
+    
         fwrite($ar,$acccion);
-        fwrite($ar,' '.$proto);
-        fwrite($ar,$ip);
-        fwrite($ar,'/');
-        fwrite($ar,$mascara.' ');
-        fwrite($ar,' any ');
-        fwrite($ar,$direction);
-        fwrite($ar,' any ');
-        fwrite($ar,' any ');
-        fclose($ar);
-        
+        fwrite($ar,' '.$protocolo);
+        fwrite($ar,' '.$ipOrigen);
+        fwrite($ar,' '.$puertoOrigen);
+        fwrite($ar,' '.$direccion);
+        fwrite($ar,' '.$ipDestino);
+        fwrite($ar,' '.$origenDestino);
+        fwrite($ar,' ( msg:"ICMP Traffic Detected"; sid:1000000'.$sid.';');
+        fwrite($ar,' metadata:policy security-ips alert; )');
+       
+        //alert icmp any any -> any any ( msg:"ICMP Traffic Detected"; sid:10000001; metadata:policy security-ips alert; )
+        exec('sh bash/moverRules.sh', $rules);
+
+        //Alert::message('this is a test message', 'info');
+        return Redirect::to('rules')->with('status','La Regla se Creo correctamente');
+        return \Redirect::to('/rules')->with('status','You account is now activated. Please login.');
+
+
+
     }
 
 }

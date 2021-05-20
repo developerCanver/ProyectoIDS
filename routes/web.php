@@ -17,12 +17,13 @@ use App\Http\Controllers\Rules;
 |
 */
 
+
 Route::get('/requisitos', function () {
     return view('requisitos');
 })->middleware('auth');
 
-Route::get('/configurar', function () {
-    return view('configurar');
+Route::get('/configurarweb', function () {
+    return view('configurarWeb');
 })->middleware('auth');
 
 Route::get('/librerias', function () {
@@ -32,7 +33,14 @@ Route::get('/librerias', function () {
 Route::get('/', function () {
     return view('inicio');
 })->middleware('auth');
+
 Route::get('/descargar', [Descargar::class, 'index']);
+
+Route::get('/correrRegla', function () {
+    return view('correrRegla');
+})->middleware('auth');
+
+
 
 Route::get('/rules', [Rules::class, 'index']);
 Route::post('regla', [Rules::class, 'store']);

@@ -15,7 +15,7 @@
             <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
                 <use xlink:href="#info-fill" /></svg>
             <div class="m-3">
-                Iniciando Actualización de Sistema
+                Iniciando Instalación de Snort
             </div>
         </div>
     </div>
@@ -26,22 +26,16 @@
     exec('sh bash/actualizar.sh', $actualizar);
 
     foreach ($actualizar as $key => $value) {
-    $value= trim($value);
-    echo ($key ." : ".$value."<br>");
+        $value= trim($value);
+        //echo ($key ." : ".$value."<br>");
+              $contador=$contador+1;
 
-    if ($value=='0 actualizados, 0 nuevos se instalarán, 0 para eliminar y 1 no actualizados.') {
-    //echo('*********************************');
-    $contador=$contador+1;
-
-    } else {
-    //exec('sh bash/actualizar.sh', $actualizar);
-    }
-
+     
     }
 
     @endphp
     <div class="row d-flex justify-content-center">
-        @if ($contador==2)
+        {{-- @if ($contador>85)
         <div class="alert alert-success d-flex align-items-center" role="alert">
             <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
                 <use xlink:href="#check-circle-fill" /></svg>
@@ -55,6 +49,25 @@
                 <use xlink:href="#exclamation-triangle-fill" /></svg>
             <div class="m-3">
                 Se interrumpiò la actualizaciòn <strong> vuelve a intertarlo</strong>, Por favor!
+            </div>
+        </div>
+        @endif --}}
+
+        @if ($actualizar == "ERROR")
+        <div class="alert alert-danger d-flex align-items-center" role="alert">
+            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
+                <use xlink:href="#exclamation-triangle-fill" /></svg>
+            <div class="m-3">
+                Se interrumpiò la Instalaciòn de Snort<strong> vuelve a intertarlo!</strong>
+            </div>
+        </div>
+
+        @else
+        <div class="alert alert-success d-flex align-items-center" role="alert">
+            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
+                <use xlink:href="#check-circle-fill" /></svg>
+            <div class="m-3">
+                Snort <strong> Instalado sastifactoriamente</strong>
             </div>
         </div>
         @endif

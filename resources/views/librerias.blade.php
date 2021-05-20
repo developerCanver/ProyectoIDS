@@ -15,7 +15,7 @@
             <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
                 <use xlink:href="#info-fill" /></svg>
             <div class="m-3">
-                Iniciando Actualización de Sistema
+                Iniciando Instalación de Librerias
             </div>
         </div>
     </div>
@@ -27,26 +27,20 @@
 
     foreach ($actualizar as $key => $value) {
     $value= trim($value);
-    echo ($key ." : ".$value."<br>");
+    //echo ($key ." : ".$value."<br>");
 
-    if ($value=='0 actualizados, 0 nuevos se instalarán, 0 para eliminar y 1 no actualizados.') {
-    //echo('*********************************');
-    $contador=$contador+1;
-
-    } else {
-    //exec('sh bash/actualizar.sh', $actualizar);
-    }
+        $contador=$contador+1;
 
     }
 
     @endphp
     <div class="row d-flex justify-content-center">
-        @if ($contador==2)
+        @if ($contador>85 && $actualizar!='ERROR')
         <div class="alert alert-success d-flex align-items-center" role="alert">
             <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
                 <use xlink:href="#check-circle-fill" /></svg>
             <div class="m-3">
-                Sistema <strong> Actualizado sastifactoriamente</strong>
+                Librerias Instaladas <strong> sastifactoriamente</strong>
             </div>
         </div>
         @else

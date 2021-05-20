@@ -4,8 +4,25 @@
 
 #Descargar paquetes
   #Crear Carpeta para organizar las descargas
-	mkdir snort_src
-	cd /snort_src
+  
+if [ -d snort_src ]
+	then
+	cd snort_src/
+	else
+	sudo  mkdir snort_src
+	sudo chown -R ubuntu:ubuntu snort
+	cd snort_src/
+fi
+
+# if [ -d libsafec-02092020.0-g6d921f ]
+# 	then
+# 	cd snort_src/
+# 	else
+# 	sudo  mkdir snort_src
+# 	sudo chown -R ubuntu:ubuntu snort
+# 	cd snort_src/
+# fi
+
   #Instalacion de Safec
 	wget https://github.com/rurban/safeclib/releases/download/v02092020/libsafec-02092020.tar.gz
 	tar -xzvf libsafec-02092020.tar.gz
@@ -14,6 +31,7 @@
 	make
 	sudo make install
 	cd ..
+
   #Instalacion de PCRE (Perl Compatible Regular Expresion)
 	wget https://ftp.pcre.org/pub/pcre/pcre-8.44.tar.gz
 	tar -xzvf pcre-8.44.tar.gz
@@ -42,6 +60,7 @@
 	wget https://boostorg.jfrog.io/artifactory/main/release/1.74.0/source/boost_1_74_0.tar.gz
 	tar -xvzf boost_1_74_0.tar.gz
   #Instalar Hyperscan 5.3
+  #error Hyperscan
 	wget https://github.com/intel/hyperscan/archive/v5.3.0.tar.gz
 	tar -xvzf v5.3.0.tar.gz
 	mkdir hyperscan-5.3.0-build
@@ -59,7 +78,8 @@
 	make
 	sudo make install
 	cd ..
-
+    
+    
 if [ $? -eq 0 ]
   then 
     exit 0

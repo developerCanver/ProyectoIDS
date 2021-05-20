@@ -22,13 +22,12 @@
         <div class="row d-flex justify-content-center">
             @php
 
-            $snort = shell_exec('sh bash/configuracionWeb.sh');
-               //print_r($snort);
+            $configuracionWeb = shell_exec('sh bash/configuracionWeb.sh');
          
             @endphp
 
 
-          @if ($snort != 'ERROR')
+          @if ($configuracionWeb != 'ERROR')
             <div class="alert alert-success d-flex align-items-center" role="alert">
                 <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
                     <use xlink:href="#check-circle-fill" /></svg>

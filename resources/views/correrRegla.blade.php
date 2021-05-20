@@ -6,6 +6,8 @@
     <!-- Start Content-->
     <div class="container-fluid">
 
+
+
         @include('layouts.menu')
 
         <div class="row d-flex justify-content-center">
@@ -13,7 +15,7 @@
                 <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
                     <use xlink:href="#info-fill" /></svg>
                 <div class="m-3">
-                    Iniciando Descarga Paquetes
+                    Ejecutando Regla Creada Exitosamente
                 </div>
             </div>
         </div>
@@ -23,25 +25,23 @@
         <div class="row d-flex justify-content-center">
             @php
 
-            $descargarPaquetes = shell_exec('sh bash/descargarPaquetes.sh');
+            $correrRegla = shell_exec('sh bash/correrRegla.sh');
             
+  
+            echo '<pre>';
+                print_r($correrRegla);
+                echo '</pre>';
 
-            // foreach ($descargarPaquetes as $key => $value) {
-            //     $value= trim($value);
-            //     echo ($key ." : ".$value."<br>");
-            // }
-
-      
     
             @endphp
 
 
-            @if ($descargarPaquetes!='ERROR')
+            {{-- @if ()
             <div class="alert alert-success d-flex align-items-center" role="alert">
                 <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
                     <use xlink:href="#check-circle-fill" /></svg>
                 <div class="m-3">
-                    Los Paquetes  se descargaron <strong> sastifactoriamente</strong>
+                    Snort sea descargado <strong> sastifactoriamente</strong>
                 </div>
             </div>
             @else
@@ -52,7 +52,7 @@
                     Se interrumpiò la descargar <strong> vuelve a intertarlo</strong>, Por favor!
                 </div>
             </div>
-            @endif 
+            @endif  --}}
         </div>
     </div>
 </div>
