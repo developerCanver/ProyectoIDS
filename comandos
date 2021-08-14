@@ -1,0 +1,31 @@
+instalar phpmysql 
+https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmyadmin-on-ubuntu-20-04-es
+/home/ubuntu/code/ProyectoIDS/app/Http/Kernel.php
+
+
+//configuracion mail con mailtrap
+
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=71af8757fbb9ae
+MAIL_PASSWORD=30969aa73ed208
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=canver199@gmail.com
+MAIL_FROM_NAME=IDS
+
+//configuracion mail gmail
+MAIL_MAILER=smtp
+MAIL_DEIVER=senmail
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USERNAME=seguridadids100@gmail.com
+MAIL_PASSWORD=ids12345
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=canver199@gmail.com
+MAIL_FROM_NAME=IDS
+
+
+
+agregar nueva regla de validacion 
+https://herminioheredia.com.mx/2019/06/17/como-crear-y-probar-reglas-de-validacion-personalizadas-en-laravel/
