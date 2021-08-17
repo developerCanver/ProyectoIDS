@@ -23,7 +23,7 @@
     @php
     $validar='';
     $contador=0;
-    exec('sh bash/actualizar.sh', $actualizar);
+    exec('sh bash/librerias.sh', $actualizar);
 
     foreach ($actualizar as $key => $value) {
     $value= trim($value);
@@ -32,7 +32,8 @@
         $contador=$contador+1;
 
     }
-
+//print_r($actualizar);
+//echo($contador);
     @endphp
     <div class="row d-flex justify-content-center">
         @if ($contador>85 && $actualizar!='ERROR')

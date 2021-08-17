@@ -15,7 +15,7 @@
             <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
                 <use xlink:href="#info-fill" /></svg>
             <div class="m-3">
-                Iniciando Instalación de Snort
+                Actualizando..
             </div>
         </div>
     </div>
@@ -58,7 +58,7 @@
             <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
                 <use xlink:href="#exclamation-triangle-fill" /></svg>
             <div class="m-3">
-                Se interrumpiò la Instalaciòn de Snort<strong> vuelve a intertarlo!</strong>
+                Se interrumpiò la actualizaciòn,<strong> vuelve a intertarlo!</strong>
             </div>
         </div>
 
@@ -67,7 +67,7 @@
             <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
                 <use xlink:href="#check-circle-fill" /></svg>
             <div class="m-3">
-                Snort <strong> Instalado sastifactoriamente</strong>
+                Sistema <strong> Actualizado sastifactoriamente</strong>
             </div>
         </div>
         @endif

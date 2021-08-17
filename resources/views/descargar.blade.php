@@ -30,8 +30,6 @@
             //     $value= trim($value);
             //     echo ($key ." : ".$value."<br>");
             // }
-
-      
     
             @endphp
 
