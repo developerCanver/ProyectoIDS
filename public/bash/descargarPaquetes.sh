@@ -10,7 +10,7 @@ if [ -d snort_src ]
 	cd snort_src/
 	else
 	sudo  mkdir snort_src
-	sudo chown -R ubuntu:ubuntu snort
+	sudo chown -R ubuntu:ubuntu snort_src
 	cd snort_src/
 fi
 

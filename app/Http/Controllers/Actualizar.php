@@ -11,7 +11,13 @@ class Actualizar extends Controller
         $this->middleware('auth');
     }
 
-    public function index() {     
+
+
+    public function index() { 
+        
+        exec('sh bash/actualizar.sh', $actualizar);
+
+        dd($actualizar);
         return view('actualizar');
     }
 }
