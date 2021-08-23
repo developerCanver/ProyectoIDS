@@ -1,11 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Descargar;
+use App\Http\Controllers\Prequisitos;
 use App\Http\Controllers\InstalarDaq;
 use App\Http\Controllers\InstalarSnort;
 use App\Http\Controllers\Actualizar;
+use App\Http\Controllers\Librerias;
+use App\Http\Controllers\Paquetes;
 use App\Http\Controllers\Rules;
+use App\Http\Controllers\Red;
+use App\Models\Btn;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,36 +23,35 @@ use App\Http\Controllers\Rules;
 */
 
 
-Route::get('/requisitos', function () {
-    return view('requisitos');
-})->middleware('auth');
 
-Route::get('/configurarweb', function () {
-    return view('configurarWeb');
-})->middleware('auth');
 
-Route::get('/librerias', function () {
-    return view('librerias');
-})->middleware('auth');
+
 
 Route::get('/', function () {
-    return view('inicio');
+    $consulta = Btn::first();
+
+    return view('inicio',[
+        'consulta'    => $consulta,
+    ]);
 })->middleware('auth');
 
-Route::get('/descargar', [Descargar::class, 'index']);
+
 
 Route::get('/correrRegla', function () {
     return view('correrRegla');
 })->middleware('auth');
 
 
+Route::get('/rules',                            [Rules::class, 'index']);
+Route::post('regla',                            [Rules::class, 'store']);
+Route::get('/instalardaq',                      [InstalarDaq::class, 'index']);
+Route::get('/instalarsnort',                    [InstalarSnort::class, 'index']);
 
-Route::get('/rules', [Rules::class, 'index']);
-Route::post('regla', [Rules::class, 'store']);
-Route::get('/instalardaq', [InstalarDaq::class, 'index']);
-Route::get('/instalarsnort', [InstalarSnort::class, 'index']);
-Route::get('/actualizar', [Actualizar::class, 'index']);
-
+Route::get('/actualizar',                       [Actualizar::class, 'index']);
+Route::get('/librerias',                        [Librerias::class, 'index'])->middleware('auth');
+Route::get('/descargar',                        [Paquetes::class, 'index'])->middleware('auth');
+Route::get('/requisitos',                       [Prequisitos::class, 'index'])->middleware('auth');
+Route::get('/configurarweb',                    [Red::class, 'index'])->middleware('auth');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

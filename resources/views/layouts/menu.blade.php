@@ -1,4 +1,10 @@
+  <style>
+      a.disabled{
+          background: #999;
+      }
+  </style>
   <!-- start page title -->
+
   <div class="row">
       <div class="col-12">
           <div class="page-title-box">
@@ -15,11 +21,11 @@
       </div>
   </div>
   <!-- end page title -->
-
+ 
   <div class="row">
       <div class="col-xl-3 col-sm-6">
           <div class="card bg-pink">
-              <a href="{{ url('/actualizar') }}" class="media-body ">
+              <a    href="{{ url('/actualizar') }}" class="btn {{$consulta->sistema}}">
                   <div class="card-body widget-style-2">
                       <div class="text-white media">
                           <div class="media-body align-self-center">
@@ -34,7 +40,7 @@
       </div>
       <div class="col-xl-3 col-sm-6">
           <div class="card bg-pink">
-              <a href="{{ url('/librerias') }}" class="media-body ">
+              <a href="{{ url('/librerias') }}" class=" media-body btn {{$consulta->libreria}}">
                   <div class="card-body widget-style-2">
                       <div class="text-white media">
                           <div class="media-body align-self-center">
@@ -85,7 +91,7 @@
 
       <div class="col-xl-3 col-sm-6">
           <div class="card bg-pink">
-              <a href="#" class="media-body " type="button" data-toggle="modal" data-target="#ModalDescargar">
+              <a href="#"  class="media-body btn {{$consulta->paquetes}}" type="button" data-toggle="modal" data-target="#ModalDescargar">
                   <div class="card-body widget-style-2">
                       <div class="text-white media">
                           <div class="media-body align-self-center">
@@ -133,7 +139,7 @@
       <div class="col-xl-3 col-sm-6">
 
           <div class="card bg-purple">
-              <a href="#" class="media-body " type="button" data-toggle="modal" data-target="#ModalDaq">
+              <a href="#" class="media-body btn {{$consulta->daq}}" type="button" data-toggle="modal" data-target="#ModalDaq">
                   <div class="card-body widget-style-2">
                       <div class="text-white media">
                           <div class="media-body align-self-center">
@@ -183,7 +189,7 @@
   <div class="row">
       <div class="col-xl-3 col-sm-6">
           <div class="card bg-info">
-              <a href="#" class="media-body " type="button" data-toggle="modal" data-target="#ModalSnort">
+              <a href="#"  class="media-body btn {{$consulta->snort}}"  type="button" data-toggle="modal" data-target="#ModalSnort">
                   <div class="card-body widget-style-2">
                       <div class="text-white media">
                           <div class="media-body align-self-center">
@@ -200,7 +206,7 @@
 
       <div class="col-xl-3 col-sm-6">
           <div class="card bg-primary">
-              <a href="{{ url('/configurarweb') }}" class="media-body ">
+              <a href="{{ url('/configurarweb') }}" class="media-body btn {{$consulta->red}}">
                   <div class="card-body widget-style-2">
                       <div class="text-white media">
                           <div class="media-body align-self-center">
@@ -215,7 +221,7 @@
       </div>
       <div class="col-xl-3 col-sm-6">
           <div class="card bg-primary">
-              <a href="{{ url('/requisitos') }}" class="media-body ">
+              <a href="{{ url('/requisitos') }}" class="media-body btn {{$consulta->prequisitos}}">
                   <div class="card-body widget-style-2">
                       <div class="text-white media">
                           <div class="media-body align-self-center">

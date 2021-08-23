@@ -26,12 +26,12 @@ class DatabaseSeeder extends Seeder
         DB::table('btns')->insert([
                    
             'sistema'   =>  '',
-            'libreria'  =>  '',
-            'paquetes'  =>  '',
-            'daq'   =>  '',
-            'snort' =>  '',
-            'red'   =>  '',
-            'prequisitos'   =>  '',
+            'libreria'  =>  'disabled',
+            'paquetes'  =>  'disabled',
+            'daq'   =>  'disabled',
+            'snort' =>  'disabled',
+            'red'   =>  'disabled',
+            'prequisitos'   =>  'disabled',
         
         ]);
     }

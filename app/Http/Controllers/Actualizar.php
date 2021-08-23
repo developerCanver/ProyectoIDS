@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Btn;
 use Illuminate\Http\Request;
 
 class Actualizar extends Controller
@@ -14,10 +15,27 @@ class Actualizar extends Controller
 
 
     public function index() { 
-        
-        exec('sh bash/actualizar.sh', $actualizar);
 
-        dd($actualizar);
-        return view('actualizar');
+        $guardar = Btn::first();
+        $consulta = Btn::first();
+
+        
+        
+        exec('sh bash/actualizar.sh', $sistema);
+
+       
+        if ($sistema != "ERROR"){
+            $guardar->sistema   = 'disabled';
+            $guardar->libreria   = '';
+            $guardar->update();
+
+        }
+       // dd($consulta);
+
+        
+        return view('actualizar', [
+            'actualizar'    => $sistema,
+            'consulta'    => $consulta,
+        ]);
     }
 }

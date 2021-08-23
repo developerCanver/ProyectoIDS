@@ -22,7 +22,7 @@
         <div class="row d-flex justify-content-center">
             @php
 
-            $configuracionWeb = shell_exec('sh bash/configuracionWeb.sh');
+            //$configuracionWeb = shell_exec('sh bash/configuracionWeb.sh');
          
             @endphp
 

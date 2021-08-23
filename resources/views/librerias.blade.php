@@ -23,20 +23,19 @@
     @php
     $validar='';
     $contador=0;
-    exec('sh bash/librerias.sh', $actualizar);
+    //exec('sh bash/librerias.sh', $librerias);
 
-    foreach ($actualizar as $key => $value) {
+    foreach ($librerias as $key => $value) {
     $value= trim($value);
     //echo ($key ." : ".$value."<br>");
 
         $contador=$contador+1;
 
     }
-//print_r($actualizar);
-//echo($contador);
+
     @endphp
     <div class="row d-flex justify-content-center">
-        @if ($contador>85 && $actualizar!='ERROR')
+        @if ($contador>85 && $librerias!='ERROR')
         <div class="alert alert-success d-flex align-items-center" role="alert">
             <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
                 <use xlink:href="#check-circle-fill" /></svg>

@@ -20,29 +20,18 @@
 
         @php
 
-        exec('sh bash/installSnortConfig.sh', $snortConfig);
-  
+       // exec('sh bash/installSnortConfig.sh', $snortConfig);
 
- 
         foreach ($snortConfig as $key => $value) {
                 $value= trim($value);
-                echo ($key ." : ".$value."<br>");
+               // echo ($key ." : ".$value."<br>");
             }
         @endphp
 
 
 
-
-        {{-- <div class="row d-flex justify-content-center">
-            @if ($SnoortPCRE == 0 && $Snotrlibdumbnet == 0 && $Snotrzlib == 0 && $SnotrLuaJIT == 0)
-            <div class="alert alert-success d-flex align-items-center" role="alert">
-                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
-                    <use xlink:href="#check-circle-fill" /></svg>
-                <div class="m-3">
-                    Segundo componente <strong> Instalado sastifactoriamente</strong>
-                </div>
-            </div>
-            @else
+        <div class="row d-flex justify-content-center">
+            @if ($snortConfig == "ERROR")
             <div class="alert alert-danger d-flex align-items-center" role="alert">
                 <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
                     <use xlink:href="#exclamation-triangle-fill" /></svg>
@@ -51,8 +40,16 @@
                 </div>
             </div>
 
+            @else
+            <div class="alert alert-success d-flex align-items-center" role="alert">
+                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
+                    <use xlink:href="#check-circle-fill" /></svg>
+                <div class="m-3">
+                    Snort <strong> Instalado sastifactoriamente</strong>
+                </div>
+            </div>
             @endif
-        </div> --}}
+        </div>
 
     </div>
 </div>

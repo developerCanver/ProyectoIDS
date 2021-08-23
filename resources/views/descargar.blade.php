@@ -23,7 +23,7 @@
         <div class="row d-flex justify-content-center">
             @php
 
-            $descargarPaquetes = shell_exec('sh bash/descargarPaquetes.sh');
+            //$descargarPaquetes = shell_exec('sh bash/descargarPaquetes.sh');
             
 
             // foreach ($descargarPaquetes as $key => $value) {

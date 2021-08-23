@@ -55,11 +55,11 @@
 
     <div class="slimscroll-menu">
 
-       
+   
         <div id="sidebar-menu">
             <ul class="metismenu" id="side-menu">
 
-                <li class="menu-title">Navigation</li>
+                {{-- <li class="menu-title">Navigation</li>
 
                 <li>
                     <a href="javascript: void(0);" class="waves-effect">
@@ -72,7 +72,7 @@
                         <li><a href="dashboard-2.html">Dashboard 2</a></li>
                         <li><a href="dashboard-3.html">Dashboard 3</a></li>
                     </ul>
-                </li>
+                </li> --}}
 
                 <li>
                     <a href="javascript: void(0);" class="waves-effect">
@@ -82,8 +82,8 @@
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
 
-                        <li><a href="{{ url('/rules') }}">Exportar txt</a></li>
-                        <li><a href="{{ url('/correrRegla') }}">Correr Regla</a></li>
+                        {{-- <li><a href="{{ url('/rules') }}">Exportar txt</a></li> --}}
+                        <li><a href="{{ url('/correrRegla') }}">Ver estado Snort</a></li>
                         {{-- <li><a href="ui-buttons.html">Buttons</a></li>
                         <li><a href="ui-fontawesome.html">Font Awesome Icons</a></li>
                         <li><a href="ui-materialdesign.html">Material Design Icons</a></li>
