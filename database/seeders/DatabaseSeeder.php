@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
 
         DB::table('btns')->insert([
                    
-            'sistema'   =>  '',
+            'sistema'   =>  'disabled',
             'libreria'  =>  'disabled',
             'paquetes'  =>  'disabled',
             'daq'   =>  'disabled',
@@ -34,5 +34,38 @@ class DatabaseSeeder extends Seeder
             'prequisitos'   =>  'disabled',
         
         ]);
+
+        DB::table('instalar_reglas')->insert([
+                   
+            'nombre'    => 'policy security-ips',
+            'regla'     => 'alert icmp any any -> any any ( msg:"ICMP Traffic Detected"; sid:10000001; metadata:policy security-ips alert; )',
+            'detalle'   => '',
+            'estado'    => true,
+        
+        ]);
+
+        DB::table('instalar_reglas')->insert([
+                   
+            'nombre'    => 'regla 1',
+            'regla'     => ' comandoregla 1',
+            'detalle'   => '',
+            'estado'    => true,
+        
+        ]);
+
+        DB::table('instalar_reglas')->insert([
+                   
+            'nombre'    => 'regla 2',
+            'regla'     => 'comando de regla 2',
+            'detalle'   => '',
+            'estado'    => true,
+        
+        ]);
+
+
+
+
+
+
     }
 }

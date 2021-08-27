@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Btn;
 use Illuminate\Http\Request;
 
 class Prequisitos extends Controller
@@ -28,4 +29,4 @@ class Prequisitos extends Controller
     ]);
     }
 }
-}
+

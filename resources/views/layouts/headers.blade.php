@@ -327,7 +327,7 @@
         </button>
     </li>
 
-    <li class="d-none d-lg-block">
+    {{-- <li class="d-none d-lg-block">
         <form class="app-search">
             <div class="app-search-box">
                 <div class="input-group">
@@ -340,5 +340,5 @@
                 </div>
             </div>
         </form>
-    </li>
+    </li> --}}
 </ul>

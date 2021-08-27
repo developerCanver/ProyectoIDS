@@ -59,44 +59,13 @@
         <div id="sidebar-menu">
             <ul class="metismenu" id="side-menu">
 
-                {{-- <li class="menu-title">Navigation</li>
-
-                <li>
-                    <a href="javascript: void(0);" class="waves-effect">
-                        <i class="ion-md-speedometer"></i>
-                        <span>  Dashboard  </span>
-                        <span class="badge badge-info badge-pill float-right"> 3 </span>
-                    </a>
-                    <ul class="nav-second-level" aria-expanded="false">
-                        <li><a href="index.html">Dashboard 1</a></li>
-                        <li><a href="dashboard-2.html">Dashboard 2</a></li>
-                        <li><a href="dashboard-3.html">Dashboard 3</a></li>
-                    </ul>
-                </li> --}}
-
-                <li>
-                    <a href="javascript: void(0);" class="waves-effect">
-                        <i class="ion-md-basket"></i>
-                        <span> Reglas </span>
-                        <span class="menu-arrow"></span>
-                    </a>
-                    <ul class="nav-second-level" aria-expanded="false">
-
-                        {{-- <li><a href="{{ url('/rules') }}">Exportar txt</a></li> --}}
-                        <li><a href="{{ url('/correrRegla') }}">Ver estado Snort</a></li>
-                        {{-- <li><a href="ui-buttons.html">Buttons</a></li>
-                        <li><a href="ui-fontawesome.html">Font Awesome Icons</a></li>
-                        <li><a href="ui-materialdesign.html">Material Design Icons</a></li>
-                        <li><a href="ui-ionicons.html">Ion Icons</a></li>
-                        <li><a href="ui-cards.html">Cards</a></li>
-                        <li><a href="ui-tabs-accordions.html">Tabs &amp; Accordions</a></li>
-                        <li><a href="ui-modals.html">Modals</a></li>
-                        <li><a href="ui-bootstrap-ui.html">BS Elements</a></li>
-                        <li><a href="ui-progressbars.html">Progress Bars</a></li>
-                        <li><a href="ui-notification.html">Notification</a></li>
-                        <li><a href="ui-sweet-alert.html">Sweet-Alert</a></li> --}}
-                    </ul>
-                </li>
+                <li><a href="{{ url('/') }}">  <i class="ion-md-options"></i>Configuración</a></li>
+                <li><a href="{{ url('/instalarReglas') }}">  <i class="ion-ios-git-merge"></i>Reglas</a></li>
+                <li><a href="{{ url('/correrRegla') }}">  <i class="ion-md-speedometer"></i>Ver estado Snort</a></li>
+                <li><a href="{{ url('/snorby') }}">  <i class="ion-md-podium"></i>Snorby</a></li>
+              
+                   
+           
 
                 {{-- <li>
                     <a href="javascript: void(0);" class="waves-effect">
