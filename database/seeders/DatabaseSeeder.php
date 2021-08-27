@@ -47,7 +47,7 @@ class DatabaseSeeder extends Seeder
         DB::table('instalar_reglas')->insert([
                    
             'nombre'    => 'regla 1',
-            'regla'     => ' comandoregla 1',
+            'regla'     => 'comandoregla 1',
             'detalle'   => '',
             'estado'    => true,
         

@@ -23,6 +23,12 @@
             </div>
         </div>
     
+
+
+
+        @include('message.message_flash')
+
+
         {{-- <div class="row">
             <div class="container">
                 <div class="card-box">
