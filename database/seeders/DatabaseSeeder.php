@@ -19,18 +19,18 @@ class DatabaseSeeder extends Seeder
 
         DB::table('users')->insert([
             'name' => 'Admin',
-            'email' => 'canverlanix@gmail.com',
-            'password' => Hash::make('12345678'),
+            'email' => 'seguridadids100@gmail.com',
+            'password' => Hash::make('ids12345'),
         ]);
 
         DB::table('btns')->insert([
                    
-            'sistema'   =>  'disabled',
-            'libreria'  =>  'disabled',
-            'paquetes'  =>  'disabled',
-            'daq'   =>  'disabled',
-            'snort' =>  'disabled',
-            'red'   =>  'disabled',
+            'sistema'       =>  'disabled',
+            'libreria'      =>  'disabled',
+            'paquetes'      =>  'disabled',
+            'daq'           =>  'disabled',
+            'snort'         =>  'disabled',
+            'red'           =>  'disabled',
             'prequisitos'   =>  'disabled',
         
         ]);
