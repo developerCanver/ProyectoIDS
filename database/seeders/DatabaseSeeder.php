@@ -49,7 +49,7 @@ class DatabaseSeeder extends Seeder
             'nombre'    => 'regla 1',
             'regla'     => 'comandoregla 1',
             'detalle'   => '',
-            'estado'    => true,
+            'estado'    => false,
         
         ]);
 
@@ -58,7 +58,7 @@ class DatabaseSeeder extends Seeder
             'nombre'    => 'regla 2',
             'regla'     => 'comando de regla 2',
             'detalle'   => '',
-            'estado'    => true,
+            'estado'    => false,
         
         ]);
 
