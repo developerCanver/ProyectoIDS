@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 @section('content')
 <div class="container">
     <style>
@@ -35,14 +36,15 @@
         </div>
 
         <ul class="nav nav-tabs">
+            <li class="nav-item desactiva_link">
+                <a class="nav-link desactiva_a" style="border: 1px solid #1a29421a;
+                border-radius: 15px 15px 0px 0px;" href="{{Url('instalarReglas')}}">Configuración</a>
+              </li>
             <li class="nav-item">
               <a class="nav-link "  style=" background: #1a2942;color:#fff;border: 2px solid transparent;
-              border-radius: 15px 15px 0px 0px;" aria-current="page" href="{{Url('instalarReglas')}}">Configuración</a>
+              border-radius: 15px 15px 0px 0px;" aria-current="page" href="{{Url('gestionarReglas')}}">Gestionar Reglas</a>
             </li>
-            <li class="nav-item desactiva_link">
-              <a class="nav-link desactiva_a" style="border: 1px solid #1a29421a;
-              border-radius: 15px 15px 0px 0px;" href="{{Url('gestionarReglas')}}">Gestionar Reglas</a>
-            </li>
+           
        
           </ul>
     
@@ -55,16 +57,37 @@
         <div class="row">
             <div class="container">
                 <div class="card-box">
+                    <h4 class="header-title mb-4">Crear regla</h4>
+                 
+                    <form action="{{url('/gstionarRegla.store')}}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="form-row">
+                          <div class="form-group col-md-3">
+                            <label >Nombre</label>
+                            <input type="text" class="form-control" value="nombre" placeholder="Nombre Regla">
+                          </div>
+                          <div class="form-group col-md-9">
+                            <label for="inputPassword4">Regla</label>
+                            <input type="text" class="form-control"  value="regla"  placeholder="Codigo de la Regla">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="inputAddress">Detalle</label>
+                          <input type="text" class="form-control"  value="detalle"  placeholder="funcionalidad de la Regla">
+                        </div>
 
-                    
-                    <h4 class="header-title mb-4">Lista</h4>
+                        <button class="btn btn-primary btn-sm">Guardar</button>
+                       
+                    </form>
+                
 
                     <table class="table">
                         <thead>
                           <tr>                           
+                            <th scope="col">Nombre</th>
                             <th scope="col">Regla</th>
-                            <th scope="col">Estado</th>
                             <th scope="col">Detalle</th>
+                            <th scope="col">Estado</th>
                             <th scope="col">Fecha Activada</th>
                             <th scope="col">Acciones</th>
                           </tr>
@@ -74,31 +97,19 @@
                             <tr>
                            
                                 <td>{{$regla->nombre}}</td>
-                                <td>
-                                    @if ($regla->estado==true)
-                                    <span class="badge rounded-pill bg-success">Activada</span>
-                                    @else
-                                    <span class="badge rounded-pill bg-warning text-dark">Desactivada</span>
-                                    @endif
-                                </td>
-                                {{-- <td>{{$regla->regla}}</td> --}}
+                                <td>{{$regla->regla}}</td> 
                                 <td>{{$regla->detalle}}</td>
-                                <td>{{$regla->fecha_activada}}</td>
+                                <td>  <span class="badge rounded-pill bg-warning text-dark">Desactivada</span></td>
+                                <td>{{$regla->created_at}}</td>
                                 <td> 
-                                    @if ($regla->estado==true)
-
-                                    <a  href="{{ URL::action('App\Http\Controllers\InstalarReglasController@descativar',$regla->id) }}" title="Desactivar" class="btn btn-danger btn-sm">
+                                  
+                                   <a  href="{{ URL::action('App\Http\Controllers\InstalarReglasController@descativar',$regla->id) }}" title="Desactivar" class="btn btn-danger btn-sm">
                                         <i class="ion ion-md-checkmark-circle"></i>
-                                    </a>
+                                    </a> 
 
-                                    @else
-
-                                    <a  href="{{ URL::action('App\Http\Controllers\InstalarReglasController@activar',$regla->id) }}" title="Activar" class="btn btn-info btn-sm">
-                                        <i class="ion ion-md-checkmark-circle"></i>
-                                    </a>
+                                 
                                     
-                                    @endif
-
+                                  
                                 </td>
                                 
                               </tr>

@@ -5,6 +5,7 @@ use App\Http\Controllers\Prequisitos;
 use App\Http\Controllers\InstalarDaq;
 use App\Http\Controllers\InstalarSnort;
 use App\Http\Controllers\Actualizar;
+use App\Http\Controllers\GestionarReglas;
 use App\Http\Controllers\InstalarReglasController;
 use App\Http\Controllers\Librerias;
 use App\Http\Controllers\Paquetes;
@@ -62,6 +63,11 @@ Route::get('/configurarweb',                    [Red::class, 'index'])->middlewa
 Route::get('/instalarReglas',                   [InstalarReglasController::class, 'index'])->middleware('auth');
 Route::get('instalarReglas/activar/{id}',          [InstalarReglasController::class, 'activar']);
 Route::get('instalarReglas/descativar/{id}',          [InstalarReglasController::class, 'descativar']);
+
+
+Route::get('/gestionarReglas',                   [GestionarReglas::class, 'index']);
+Route::post('/gestionarReglas/store',             [GestionarReglas::class, 'store']);
+
 
 Route::get('/snorby', function () {
   
