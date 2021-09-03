@@ -60,13 +60,18 @@ Route::get('/descargar',                        [Paquetes::class, 'index'])->mid
 Route::get('/requisitos',                       [Prequisitos::class, 'index'])->middleware('auth');
 Route::get('/configurarweb',                    [Red::class, 'index'])->middleware('auth');
 
-Route::get('/instalarReglas',                   [InstalarReglasController::class, 'index'])->middleware('auth');
-Route::get('instalarReglas/activar/{id}',          [InstalarReglasController::class, 'activar']);
+Route::get('/instalarReglas',                         [InstalarReglasController::class, 'index'])->middleware('auth');
+Route::get('instalarReglas/activar/{id}',             [InstalarReglasController::class, 'activar']);
 Route::get('instalarReglas/descativar/{id}',          [InstalarReglasController::class, 'descativar']);
 
 
-Route::get('/gestionarReglas',                   [GestionarReglas::class, 'index']);
-Route::post('/gestionarReglas/store',             [GestionarReglas::class, 'store']);
+Route::get('/gestionarReglas',                       [GestionarReglas::class, 'index']);
+Route::post('/gestionarReglas/store',                [GestionarReglas::class, 'store']);
+Route::get('gestionarReglas/eliminar/{id}',          [GestionarReglas::class, 'eliminar']);
+Route::get('gestionarReglas/editar/{id}',            [GestionarReglas::class, 'editar']);
+Route::post('/gestionarReglas/actualizar',           [GestionarReglas::class, 'actualizar']);
+
+
 
 
 Route::get('/snorby', function () {

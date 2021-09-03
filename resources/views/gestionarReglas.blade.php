@@ -49,7 +49,7 @@
           </ul>
     
 
-
+<br>
 
         @include('message.message_flash')
 
@@ -57,28 +57,61 @@
         <div class="row">
             <div class="container">
                 <div class="card-box">
+
+                    @if ($opcion=='guadar')
+                  
                     <h4 class="header-title mb-4">Crear regla</h4>
                  
-                    <form action="{{url('/gstionarRegla.store')}}" method="POST" enctype="multipart/form-data">
+                    <form action="{{url('/gestionarReglas/store')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-row">
                           <div class="form-group col-md-3">
                             <label >Nombre</label>
-                            <input type="text" class="form-control" value="nombre" placeholder="Nombre Regla">
+                            <input type="text" class="form-control" name="nombre" required="true" placeholder="Nombre Regla">
                           </div>
                           <div class="form-group col-md-9">
                             <label for="inputPassword4">Regla</label>
-                            <input type="text" class="form-control"  value="regla"  placeholder="Codigo de la Regla">
+                            <input type="text" class="form-control"  name="regla"  required placeholder="Codigo de la Regla">
                           </div>
-                        </div>
+                        </div>  
                         <div class="form-group">
                           <label for="inputAddress">Detalle</label>
-                          <input type="text" class="form-control"  value="detalle"  placeholder="funcionalidad de la Regla">
+                          <input type="text" class="form-control"  name="detalle"  required placeholder="funcionalidad de la Regla">
                         </div>
 
                         <button class="btn btn-primary btn-sm">Guardar</button>
+                        
+                    </form>
+                 
+                    @else
+                    <h4 class="header-title mb-4">Editar regla</h4>
+                 
+                    <form action="{{url('/gestionarReglas/actualizar')}}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <input type="hidden" class="form-control" name="id" required="true" value="{{$regla->id}}">
+
+                        <div class="form-row">
+                          <div class="form-group col-md-3">
+                            <label >Nombre</label>
+                            <input type="text" class="form-control" name="nombre" required="true" value="{{$regla->nombre}}">
+                          </div>
+                          <div class="form-group col-md-9">
+                            <label for="inputPassword4">Regla</label>
+                            <input type="text" class="form-control"  name="regla"  required value="{{$regla->regla}}">
+                          </div>
+                        </div>  
+                        <div class="form-group">
+                          <label for="inputAddress">Detalle</label>
+                          <input type="text" class="form-control"  name="detalle"  required value="{{$regla->detalle}}">
+                        </div>
+
+                        <button class="btn btn-warning btn-sm">Actualizar</button>
                        
                     </form>
+              
+                    @endif
+                    <br>
+
                 
 
                     <table class="table">
@@ -103,10 +136,18 @@
                                 <td>{{$regla->created_at}}</td>
                                 <td> 
                                   
-                                   <a  href="{{ URL::action('App\Http\Controllers\InstalarReglasController@descativar',$regla->id) }}" title="Desactivar" class="btn btn-danger btn-sm">
-                                        <i class="ion ion-md-checkmark-circle"></i>
+                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                    
+
+                                   <a  href="{{ URL::action('App\Http\Controllers\GestionarReglas@eliminar',$regla->id) }}" title="Eliminar" class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash"></i>
                                     </a> 
 
+                                    <a  href="{{ URL::action('App\Http\Controllers\GestionarReglas@editar',$regla->id) }}" title="Editar" class="btn btn-success btn-sm">
+                                        <i class="far fa-edit"></i>
+                                        </a> 
+                                      
+                                      </div>
                                  
                                     
                                   
