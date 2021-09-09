@@ -57,6 +57,11 @@
         <div class="row">
             <div class="container">
                 <div class="card-box">
+                  <center>
+
+                    <img src="/assets/images/estructura_reglas.jpeg" class="img-fluid" alt="Responsive image" style="width: 700px">
+                  </center>
+                  <br>
 
                     @if ($opcion=='guadar')
                   

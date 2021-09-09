@@ -62,7 +62,7 @@
                 <li><a href="{{ url('/') }}">  <i class="ion-md-options"></i>Configuración</a></li>
                 <li><a href="{{ url('/instalarReglas') }}">  <i class="ion-ios-git-merge"></i>Reglas</a></li>
                 <li><a href="{{ url('/correrRegla') }}">  <i class="ion-md-speedometer"></i>Ver estado Snort</a></li>
-                <li><a href="{{ url('/snorby') }}">  <i class="ion-md-podium"></i>Snorby</a></li>
+                <li><a href="{{ url('/resultados') }}">  <i class="ion-md-podium"></i>Resultados</a></li>
               
                    
            

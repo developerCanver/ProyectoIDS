@@ -74,9 +74,9 @@ Route::post('/gestionarReglas/actualizar',           [GestionarReglas::class, 'a
 
 
 
-Route::get('/snorby', function () {
+Route::get('/resultados', function () {
   
-    return view('snorby');
+    return view('resultados');
 
 })->middleware('auth');
 

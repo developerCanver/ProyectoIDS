@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box">
-                    <h4 class="page-title">Snorby </h4>
+                    <h4 class="page-title">resultados </h4>
                     <div class="page-title-right">
                         <ol class="breadcrumb p-0 m-0">
                             <li class="breadcrumb-item"><a href="{{ url('/') }}">Inicio</a></li>
@@ -29,6 +29,10 @@
             <div class="container">
                 <div class="card-box">
                     <h4 class="header-title mb-4">Ir</h4>
+
+                    <center>
+                        <button class="btn-sm btn-info">Ver resultados</button>
+                    </center>
 
                 </div>
 
