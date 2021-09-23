@@ -81,6 +81,12 @@ Route::get('/resultados', function () {
 })->middleware('auth');
 
 
+Route::get('/ayuda', function () {
+  
+    return view('ayuda');
+
+})->middleware('auth');
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

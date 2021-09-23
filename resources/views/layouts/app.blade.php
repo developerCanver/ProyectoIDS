@@ -63,6 +63,7 @@
                 <li><a href="{{ url('/instalarReglas') }}">  <i class="ion-ios-git-merge"></i>Reglas</a></li>
                 <li><a href="{{ url('/correrRegla') }}">  <i class="ion-md-speedometer"></i>Ver estado Snort</a></li>
                 <li><a href="{{ url('/resultados') }}">  <i class="ion-md-podium"></i>Resultados</a></li>
+                <li><a href="{{ url('/ayuda') }}">  <i class="ion-md-help-circle"></i>Ayuda</a></li>
               
                    
            
