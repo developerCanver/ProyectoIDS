@@ -95,17 +95,11 @@
 
                                     <a  href="{{ URL::action('App\Http\Controllers\InstalarReglasController@activar',$regla->id) }}" title="Activar" class="btn btn-info btn-sm">
                                         <i class="ion ion-md-checkmark-circle"></i>
-                                    </a>
-                                    
+                                    </a>                                    
                                     @endif
-
-                                </td>
-                                
-                              </tr>
-                                
-                            @endforeach
-                         
-                          
+                                </td>                                
+                              </tr>                                
+                            @endforeach   
                         </tbody>
                       </table>
                 </div>
