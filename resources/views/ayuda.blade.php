@@ -42,7 +42,7 @@
           <!-- Modal -->
           <div class="modal fade" id="ModalDescargar" tabindex="-1" aria-labelledby="ModalDescargarLabel"
           aria-hidden="true">
-          <div class="modal-dialog modal-lg"">
+          <div class="modal-dialog modal-lg">
               <div class="modal-content">
                   <div class="modal-header" style="background: #1a2942;">
                       <h5 class="modal-title" style="color:#fff;" id="ModalDescargarLabel">
