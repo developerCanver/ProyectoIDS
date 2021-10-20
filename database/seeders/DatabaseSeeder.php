@@ -62,6 +62,14 @@ class DatabaseSeeder extends Seeder
         
         ]);
 
+        DB::table('guis')->insert([
+                
+            'estado'    => false,
+        
+        ]);
+
+        
+
 
 
 

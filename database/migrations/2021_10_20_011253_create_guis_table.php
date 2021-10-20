@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateResultadosTable extends Migration
+class CreateGuisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateResultadosTable extends Migration
      */
     public function up()
     {
-        Schema::create('resultados', function (Blueprint $table) {
+        Schema::create('guis', function (Blueprint $table) {
             $table->id();
-            $table->string('estado_resultado', 10)->nullable();
+            $table->boolean('estado')->default(false); 
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateResultadosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('resultados');
+        Schema::dropIfExists('guis');
     }
 }

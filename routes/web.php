@@ -6,6 +6,7 @@ use App\Http\Controllers\InstalarDaq;
 use App\Http\Controllers\InstalarSnort;
 use App\Http\Controllers\Actualizar;
 use App\Http\Controllers\GestionarReglas;
+use App\Http\Controllers\GuiController;
 use App\Http\Controllers\InstalarReglasController;
 use App\Http\Controllers\Librerias;
 use App\Http\Controllers\Paquetes;
@@ -74,12 +75,13 @@ Route::post('/gestionarReglas/actualizar',           [GestionarReglas::class, 'a
 
 
 
-Route::get('/resultados', function () {
+// Route::get('/resultados', function () {
   
-    return view('resultados');
+//     return view('resultados');
 
-})->middleware('auth');
+// })->middleware('auth');
 
+Route::get('/resultados',                       [GuiController::class, 'index']);
 
 Route::get('/ayuda', function () {
   

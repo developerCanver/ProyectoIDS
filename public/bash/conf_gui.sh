@@ -1,9 +1,9 @@
 ## PULLEDPORK Original
 	sudo apt-get install -y libcrypt-ssleay-perl liblwp-useragent-determined-perl
 ## Descargamos la version de Pulledpork
-	cd /snort_src
-	wget https://github.com/shirkdog/pulledpork/archive/master.tar.gz -O pulledpork-master.tar.gz
-	tar xzvf pulledpork-master.tar.gz
+	cd snort_src
+	##wget https://github.com/shirkdog/pulledpork/archive/master.tar.gz -O pulledpork-master.tar.gz
+	##tar xzvf pulledpork-master.tar.gz
 	cd pulledpork-master
 	sudo cp pulledpork.pl /usr/local/bin
 	sudo chmod +x /usr/local/bin/pulledpork.pl
@@ -13,6 +13,7 @@
 	/usr/local/bin/pulledpork.pl -V
 ## PulledPork v0.8.0 - The only positive thing to come out of 2020...well this and take-out liquor!
 ## Se realiza la siguiente configuracion dentro del archivo pulledpork.conf
+## VALIDADO
 	sudo vi /usr/local/etc/pulledpork/pulledpork.conf
 		#La Linea19 se debe cambiar por la url de las reglas y el oinkcode de registro
 		rule_url=https://www.snort.org/rules/|snortrules-snapshot.tar.gz|<oinkcode>
