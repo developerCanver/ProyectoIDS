@@ -42,9 +42,7 @@
 
         <div class="row d-flex justify-content-center">
             @php
-
-            $correrRegla = shell_exec('sh bash/correrRegla.sh');
-            
+            $correrRegla = shell_exec('sh bash/correrRegla.sh');            
   
             echo '<pre style="height: 400px;background: #111;color: #b2dd87;width: 80%;">';
                 print_r($correrRegla);
