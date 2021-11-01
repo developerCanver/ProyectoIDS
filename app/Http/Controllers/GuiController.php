@@ -12,20 +12,30 @@ class GuiController extends Controller
      
         $consulta= Gui::first();
         $estado=$consulta->estado;
+        $id=$consulta->id;
 
         if ($estado==0) {
             
             exec('sh bash/conf_gui.sh', $validacion);
 
-            if ($validacion == "ERROR"){   
-                dd($validacion);
-      
-            }
+            if ($validacion != "ERROR"){   
 
-        } else {
+                $guardar =  Gui::findOrfail($id);
+                $guardar->estado       = 1;        
+                $guardar->update();
+                
+            }
             
+        } else {
+        
+            exec('sh bash/conf_gui_eje .sh', $ejecutar);
         }
         
+       // dd($validacion);
+        return view('resultados',[
+            'estado' => $estado,
+         
+        ]);
       
     }
 }

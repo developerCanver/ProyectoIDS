@@ -28,7 +28,9 @@
                     <h4 class="header-title mb-4">Ir</h4>
 
                     <center>
-                        <button class="btn-sm btn-info">Ver resultados</button>
+                        
+                        <a href="http://localhost:8000/en-US/account/login?return_to=%2Fen-US%2F" target="_black" class="btn-sm btn-info">Ver resultados</a>
+
                     </center>
 
                 </div>

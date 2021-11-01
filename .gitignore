@@ -12,14 +12,12 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 /public/libdaq-3.0.3
+/public/interfaz/pulledpork-master
 /public/snort_src
 /public/3.1.4.0.tar.gz
 /public/v3.0.3.tar.gz
 /public/ethtool.service
 /public/3.1.4.0.tar.gz
 /public/bash/descargarPaquetes.sh
-/public/interfaz/pulledpork-master
 /public/interfaz/pulledpork-master.tar.gz
-
-
-
+/public/interfaz/splunk-8.2.2.1-ae6821b7c64b-linux-2.6-amd64.deb
