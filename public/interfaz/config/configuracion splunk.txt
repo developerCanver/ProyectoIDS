@@ -1,0 +1,23 @@
+sudo mkdir /opt/splunk/etc/apps/TA_Snort3_json/local
+#Copiar el archivo inputs 
+sudo cp /opt/splunk/etc/apps/TA_Snort3_json/local/inputs.conf
+#Reiniciar el servicio
+sudo service Splunkd restart
+#Limpiar la instalción de SPLUNK 
+sudo apt-get install -y apache2 apache2-utils
+sudo a2enmod proxy
+sudo a2enmod proxy_http
+sudo systemctl restart apache2
+sudo touch /etc/apache2/.htpasswd
+sudo htpasswd /etc/apache2/.htpasswd ids
+#Copiar el archivo 000-default.conf
+sudo  /etc/apache2/sites-available/000-default.conf
+#Verificar la configuracion de Apache
+sudo apachectl -t
+#Reiniciar Apache
+sudo systemctl restart apache2
+#Configurar para que splunk acepte conexiones locales
+#Copiamos el archivo
+sudo cp /opt/splunk/etc/system/local/web.conf
+#Reiniciamos el servicio Splunkd
+sudo service Splunkd restart
