@@ -67,7 +67,7 @@ fi
 	sudo cp snort3.service /lib/systemd/system/snort3.service
 
 #Activamos el servicio
-	sudo systemctls enable snort3
+	sudo systemctl enable snort3
 	sudo service snort3 start
 	service snort3 status 
 	sudo journalctl -u snort3.service
