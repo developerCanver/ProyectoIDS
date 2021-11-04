@@ -95,12 +95,15 @@ fi
 	#sudo service Splunkd start
 
 	#Configuracion de adicional para Splucnk
-	sudo mkdir /opt/splunk/etc/apps/TA_Snort3_json/local
 
+	#sudo mkdir /opt/splunk/etc/apps/TA_Snort3_json/local
+
+	sudo mkdir /opt/splunk/etc/apps/TA_Snort3_json
+	sudo mkdir /opt/splunk/etc/apps/TA_Snort3_json/local
 
 	cd config/
 
-	sudo mkdir /opt/splunk/etc/apps/TA_Snort3_json/local
+	
 	#Copiar el archivo inputs 
 	sudo cp inputs.conf /opt/splunk/etc/apps/TA_Snort3_json/local/inputs.conf
 	#Reiniciar el servicio
