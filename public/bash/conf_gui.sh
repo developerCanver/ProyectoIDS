@@ -75,7 +75,6 @@ fi
 
 ##Instalacion del GUI la interfaz Grafica SPLUNK
 	
-
 if [ -f splunk-8.2.2.1-ae6821b7c64b-linux-2.6-amd64.deb ]
 	then
 	sudo dpkg -i splunk-8.2.2.1-ae6821b7c64b-linux-2.6-amd64.deb
@@ -84,15 +83,16 @@ if [ -f splunk-8.2.2.1-ae6821b7c64b-linux-2.6-amd64.deb ]
 	sudo dpkg -i splunk-8.2.2.1-ae6821b7c64b-linux-2.6-amd64.deb
 fi
 
+	sudo dpkg -i splunk-8.2.2.1-ae6821b7c64b-linux-2.6-amd64.deb
 	sudo chown -R splunk:splunk /opt/splunk	
 	#asignar usuario : ids, contraseña ids12345
 	sudo /opt/splunk/bin/splunk start --answer-yes --accept-license -Y
 
 	sudo /opt/splunk/bin/splunk stop
-	sudo /opt/splunk/bin/splunk enable boot-start -systemd-managed 1 -Y
+	sudo /opt/splunk/bin/splunk enable boot-start -systemd-managed 1
 	sudo chown -R splunk:splunk /opt/splunk
 	#Correr el programa 
-	#sudo service Splunkd start
+	sudo service Splunkd start
 
 	#Configuracion de adicional para Splucnk
 
@@ -116,7 +116,7 @@ fi
 	sudo touch /etc/apache2/.htpasswd
 
 	#usuario y contraseña
-	#sudo htpasswd /etc/apache2/.htpasswd ids
+	sudo htpasswd /etc/apache2/.htpasswd ids
 	#contraseña: ids12345
 	#Copiar el archivo 000-default.conf
 	sudo cp 000-default.conf /etc/apache2/sites-available/000-default.conf
